@@ -108,9 +108,9 @@ public class SalesForceAutomation2 extends BaseTest {
 		
 		//saveNewButton_32_testcase(props);
 		
-		//verifyFirstLastName_33_testcase(props);
+		verifyFirstLastName_33_testcase(props);
 		
-		updatedLastNameVerify_34_testcase(props) ;
+		//updatedLastNameVerify_34_testcase(props) ;
 		
 		
 		
@@ -2286,6 +2286,29 @@ public class SalesForceAutomation2 extends BaseTest {
 		
 			clickElementById("Login");
 			
+			//Click Profile tab to compare the profile page and User page are same
+			
+			WebElement dropDown = driver.findElement(By.id("userNavLabel"));
+			dropDown.isDisplayed();
+			dropDown.click();
+			
+			//Click "My Profile" option
+			
+			WebElement myProfile = driver.findElement(By.linkText("My Profile"));
+			myProfile.sendKeys(Keys.ARROW_DOWN);
+			try {
+				Thread.sleep(2000);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+			myProfile.isSelected();
+			myProfile.click();
+			
+			//Get Url of the profile page
+			
+			//String url = "https://tekarch65-dev-ed.develop.my.salesforce.com/_ui/core/userprofile/UserProfilePage?tab=sfdc.ProfilePlatformFeed";
+			String profilePageUrl = driver.getCurrentUrl();
+			
 			//Click Home tab
 			clickElementByXpath("//li[@id ='home_Tab']");
 			
@@ -2301,12 +2324,12 @@ public class SalesForceAutomation2 extends BaseTest {
 			
 			//Verify the first and last name page is same as My Profile page
 			
-			WebElement expectedTitle1 = driver.findElement(By.xpath("//span[@id = 'tailBreadcrumbNode']"));
+			String homePageUrl = driver.getCurrentUrl();
 						
-			if(verify.getText().equals(expectedTitle1.getText())) {
-				System.out.println("The profile page and first and last name are same");
+			if(profilePageUrl.equals(homePageUrl)) {
+				System.out.println("The profile page and first and last name User page are same");
 			}else {
-				System.out.println("The profile page and first and last name are not same");
+				System.out.println("The profile page and first and last name User page are not same");
 			}
 			
 			driver.close();			
@@ -2343,12 +2366,30 @@ public class SalesForceAutomation2 extends BaseTest {
 		
 			clickElementById("Login");
 			
-			//Click Home tab
+			WebElement dropDown = driver.findElement(By.id("userNavLabel"));
+			dropDown.isDisplayed();
+			dropDown.click();
+			
+			//Click "My Profile" option
+			
+			WebElement myProfile = driver.findElement(By.linkText("My Profile"));
+			myProfile.sendKeys(Keys.ARROW_DOWN);
+			
+//			try {
+//				Thread.sleep(2000);
+//			} catch (InterruptedException e) {
+//				e.printStackTrace();
+//			}
+			myProfile.isSelected();
+			myProfile.click();
+			//String myProfileUrl = 
+			
 			clickElementByXpath("//li[@id ='home_Tab']");
 			
 			//Close popup
 			driver.findElement(By.xpath("//*[@id='tryLexDialogX']")).click();
-			
+						
+						
 			//Verify if the first and last name link is displayed and click
 			
 			WebElement verify = driver.findElement(By.xpath("//div[@id='ptBody']/div/div[2]/span[1]/h1/a"));
@@ -2395,8 +2436,7 @@ public class SalesForceAutomation2 extends BaseTest {
 			lastName.sendKeys("Abcd");
 			clickElementByXpath("//input[@value='Save All']");
 			
-			//driver.switchTo().window(parentWindow);
-								
+							
 			driver.navigate().refresh();
 			
 			//Verify Last Name is displayed
