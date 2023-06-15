@@ -52,6 +52,7 @@ public class BaseTest {
 	protected static WebDriver driver;
 	protected WebDriverWait wait;
 	protected Log4JUtility logObject = Log4JUtility.getInstance();
+	
 	//protected Logger log;
 	public static Logger log;
 	public static Properties props = null;

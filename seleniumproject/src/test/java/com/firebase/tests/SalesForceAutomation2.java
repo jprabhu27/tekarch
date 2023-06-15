@@ -1685,10 +1685,8 @@ public class SalesForceAutomation2 extends BaseTest {
 			WebElement logout = driver.findElement(By.linkText("Logout"));
 			logout.isSelected();
 			logout.click();
-//			driver.close();
-			
-			
-//			launchBrowser(browser);
+
+				
 			getPage(loginUrl);
 			
 			try {
@@ -2555,9 +2553,39 @@ public class SalesForceAutomation2 extends BaseTest {
 				removeButton.isSelected();
 				removeButton.click();
 				
+				//Verify Selected tabs should be moved to Available Tabs
+						
 				
 				
 				
+				//Click Save
+				
+				
+				
+				//Verify All Tabs displayed
+				
+				
+				
+				//Verify tab removed not displayed in the tab bar
+				
+				
+				
+				//Click Logout
+				
+				
+				//verify Salesforce Login Page displayed
+				
+				
+				
+				//Launch and Login SalesForce Application
+				
+				
+				
+				//Verify the tab removed should not be displayed in the tab bar
+				
+				
+				
+				//driver.close();				
 			}
 			
 		}
