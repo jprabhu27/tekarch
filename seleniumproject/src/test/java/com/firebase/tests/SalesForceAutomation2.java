@@ -2332,7 +2332,7 @@ public class SalesForceAutomation2 extends BaseTest {
 				System.out.println("The profile page and first and last name User page are not same");
 			}
 			
-			driver.close();			
+			driver.close();	
 		}
 		
 		
@@ -2350,12 +2350,6 @@ public class SalesForceAutomation2 extends BaseTest {
 			String expectedTitle = "Login | Salesforce";
 			validateTitle(expectedTitle);
 			
-//			try {
-//				Thread.sleep(2000);
-//			} catch (InterruptedException e) {
-//				// TODO Auto-generated catch block
-//				e.printStackTrace();
-//			}
 			//Login
 			String loginName = props.getProperty("loginName");
 			enterTextById("username", loginName);
@@ -2375,11 +2369,7 @@ public class SalesForceAutomation2 extends BaseTest {
 			WebElement myProfile = driver.findElement(By.linkText("My Profile"));
 			myProfile.sendKeys(Keys.ARROW_DOWN);
 			
-//			try {
-//				Thread.sleep(2000);
-//			} catch (InterruptedException e) {
-//				e.printStackTrace();
-//			}
+
 			myProfile.isSelected();
 			myProfile.click();
 			//String myProfileUrl = 
@@ -2422,7 +2412,6 @@ public class SalesForceAutomation2 extends BaseTest {
 			
 			Boolean isdisplayed = contactInfoTitleElement.isDisplayed();
 			System.out.println("The Edit page is displayed= "+ isdisplayed);
-			
 			driver.switchTo().frame("contactInfoContentId");
 						
 			//About Tab
@@ -2430,22 +2419,42 @@ public class SalesForceAutomation2 extends BaseTest {
 			about.click();
 		
 			//Last Name
+			String newLastName = "Abcd";
 			WebElement lastName = driver.findElement(By.xpath("//input[@id='lastName']"));
 			lastName.click();
 			lastName.clear();
-			lastName.sendKeys("Abcd");
+			lastName.sendKeys(newLastName);
 			clickElementByXpath("//input[@value='Save All']");
-			
-							
+										
 			driver.navigate().refresh();
 			
-			//Verify Last Name is displayed
+			//Verify Last Name is displayed 
+			String expectedFullName = "Jaya " + newLastName;
+			String actualBreadCrumbFullName = 
+				driver.findElement(By.xpath("//*[@id= 'tailBreadcrumbNode']")).getText().trim();
 			
+			System.out.println("actualBreadCrumbFullName = " + actualBreadCrumbFullName);
+			if (expectedFullName.equals(actualBreadCrumbFullName)) {
+				
+				System.out.println("The updated name '" +actualBreadCrumbFullName+ "' is displayed in breadcrumb");
+				
+			}else {
+				System.out.println("The updated name '" +actualBreadCrumbFullName+ "' doesn't match expected name '" +expectedFullName + "' in breadcrumb");
+			}
 			
-			
+						
 			//Verify UserMenu First and Last Name is updated
-			
-			
+			dropDown = driver.findElement(By.id("userNavLabel"));
+			String actualUserMenuName = dropDown.getText().trim();
+		
+			if (expectedFullName.equals(actualUserMenuName)) {
+				
+				System.out.println("The updated name '" +actualUserMenuName+ "' is displayed in user menu");
+				
+			}else {
+				System.out.println("The updated name '" +actualUserMenuName+ " doesn't match " + expectedFullName + "' in user menu");
+			}
+				
 			
 			//Verify the User:First and Last Name has the updated last name
 			
