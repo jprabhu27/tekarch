@@ -54,7 +54,7 @@ public class SalesForceAutomation2 extends BaseTest {
 		
 		//username_dropdown_5_testcase(props);
 		
-		myProfile_option_6_testcase (props);
+		//myProfile_option_6_testcase (props);
 		
 		//mySettings_7_testcase(props);
 		
@@ -109,6 +109,10 @@ public class SalesForceAutomation2 extends BaseTest {
 		//saveNewButton_32_testcase(props);
 		
 		//verifyFirstLastName_33_testcase(props);
+		
+		updatedLastNameVerify_34_testcase(props) ;
+		
+		
 		
 		
 	}
@@ -357,13 +361,12 @@ public class SalesForceAutomation2 extends BaseTest {
 		try {
 			Thread.sleep(2000);
 		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		myProfile.isSelected();
 		myProfile.click();
 				
-		// Click on Edit Profile
+		// Click on Edit Profile image
 		
 		WebElement edit = driver.findElement(By.xpath("//img[@title='Edit Profile']"));
 		edit.isSelected();
@@ -416,7 +419,6 @@ public class SalesForceAutomation2 extends BaseTest {
 		try {
 			Thread.sleep(3000);
 		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
@@ -442,11 +444,12 @@ public class SalesForceAutomation2 extends BaseTest {
 			e.printStackTrace();
 		}
 		
+		//Save
 		clickElementByXpath("//*[@id='j_id0:j_id7:save']");
+		
 		try {
 			Thread.sleep(2000);
 		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
@@ -469,7 +472,6 @@ public class SalesForceAutomation2 extends BaseTest {
 		try {
 			Thread.sleep(2000);
 		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
@@ -2310,6 +2312,7 @@ public class SalesForceAutomation2 extends BaseTest {
 			driver.close();			
 		}
 		
+		
 		public static void updatedLastNameVerify_34_testcase(Properties props) {
 			
 			String browser = props.getProperty("browser");
@@ -2319,17 +2322,17 @@ public class SalesForceAutomation2 extends BaseTest {
 			driver.get(loginUrl);
 			
 			// Call once per each test case
-			driver.manage().timeouts().implicitlyWait(4000,TimeUnit.MILLISECONDS);
+			driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
 			
 			String expectedTitle = "Login | Salesforce";
 			validateTitle(expectedTitle);
 			
-			try {
-				Thread.sleep(2000);
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+//			try {
+//				Thread.sleep(2000);
+//			} catch (InterruptedException e) {
+//				// TODO Auto-generated catch block
+//				e.printStackTrace();
+//			}
 			//Login
 			String loginName = props.getProperty("loginName");
 			enterTextById("username", loginName);
@@ -2350,10 +2353,102 @@ public class SalesForceAutomation2 extends BaseTest {
 			
 			WebElement verify = driver.findElement(By.xpath("//div[@id='ptBody']/div/div[2]/span[1]/h1/a"));
 			Boolean result = verify.isDisplayed();
-			System.out.println("First and last name link display result =" +result);
+			System.out.println("First and last name link display result= " +result);
 			verify.click();
 			
 			//Edit Profile icon
+			
+			try {
+				Thread.sleep(2000);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+			// Click on Edit Profile
+				
+			WebElement edit = driver.findElement(By.xpath("//img[@title='Edit Profile']"));
+			edit.isSelected();
+			edit.click();
+			
+			Boolean clicked = edit.isSelected();
+			System.out.println("The Edit button is clicked= "+ clicked);
+			
+			//Verify if the Edit Profile page is displayed
+					
+			
+			WebElement contactInfoTitleElement = driver.findElement(By.xpath("//*[@id= 'contactInfoTitle']"));
+			
+			Boolean isdisplayed = contactInfoTitleElement.isDisplayed();
+			System.out.println("The Edit page is displayed= "+ isdisplayed);
+			
+			driver.switchTo().frame("contactInfoContentId");
+						
+			//About Tab
+			WebElement about = driver.findElement(By.xpath("//li[@id='aboutTab']/a"));
+			about.click();
+		
+			//Last Name
+			WebElement lastName = driver.findElement(By.xpath("//input[@id='lastName']"));
+			lastName.click();
+			lastName.clear();
+			lastName.sendKeys("Abcd");
+			clickElementByXpath("//input[@value='Save All']");
+			
+			//driver.switchTo().window(parentWindow);
+								
+			driver.navigate().refresh();
+			
+			//Verify Last Name is displayed
+			
+			
+			
+			//Verify UserMenu First and Last Name is updated
+			
+			
+			
+			//Verify the User:First and Last Name has the updated last name
+			
+			
+			
+			
+			//driver.close;
+			
+			
+		}
+		
+		
+		public static void verifyTabCustomization_35_testcase(Properties props) {
+			
+			String browser = props.getProperty("browser");
+			launchBrowser(browser);
+			
+			String loginUrl = props.getProperty("loginUrl");
+			driver.get(loginUrl);
+			
+			// Call once per each test case
+			driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
+			
+			String expectedTitle = "Login | Salesforce";
+			validateTitle(expectedTitle);
+			
+			try {
+				Thread.sleep(2000);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			//Login
+			String loginName = props.getProperty("loginName");
+			enterTextById("username", loginName);
+			
+			//Password
+			String password = props.getProperty("password");
+			enterTextById("password", password);
+		
+			clickElementById("Login");
+
+			//Click on the All Tab
 			
 			
 			
