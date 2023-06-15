@@ -19,11 +19,13 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
-
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 //import org.testng.annotations.Test;
 import org.testng.annotations.Test;
+
+import io.netty.util.internal.ThreadLocalRandom;
 
 import java.util.concurrent.TimeUnit;
 
@@ -2248,10 +2250,8 @@ public class SalesForceAutomation2 extends BaseTest {
 			
 			//Save and new button
 			clickElementByXpath("//input[@value = 'Save & New']");
-			
-									
-			//validateTextById("//*[@id=\"ep\"]/div[1]/table/tbody/tr/td[1]/h2", " Contact Edit");
-			
+										
+				
 			driver.close();
 		
 			}
@@ -2306,7 +2306,6 @@ public class SalesForceAutomation2 extends BaseTest {
 			
 			//Get Url of the profile page
 			
-			//String url = "https://tekarch65-dev-ed.develop.my.salesforce.com/_ui/core/userprofile/UserProfilePage?tab=sfdc.ProfilePlatformFeed";
 			String profilePageUrl = driver.getCurrentUrl();
 			
 			//Click Home tab
@@ -2499,8 +2498,67 @@ public class SalesForceAutomation2 extends BaseTest {
 
 			//Click on the All Tab
 			
+			WebElement allTab = driver.findElement(By.id("AllTab_Tab"));
+			allTab.isSelected();
+			allTab.click();
 			
+			//verify if the All Tabs page is displayed
+			WebElement allTabsPage = driver.findElement(By.xpath("//*[@id= 'bodyCell']/div[1]/div[1]/div[1]/h1"));
+			Boolean result = allTabsPage.isDisplayed();
+			System.out.println("The All Tabs page displayed is= " +result);
 			
+			//Click Customize My Tabs
+			clickElementByXpath("//*[@id=\"bodyCell\"]/div[3]/div[1]/table/tbody/tr/td[2]/input");
+			
+			//Verify if the Customize My Tabs page is displayed 
+			WebElement customizeMyTabs = driver.findElement(By.xpath("//*[@id=\"bodyCell\"]/div[1]/div[1]/div[1]/h1"));
+			Boolean result2 = customizeMyTabs.isDisplayed();
+			System.out.println("The Customize My Tabs page displayed is= " +result);
+			
+			//Select any tab from the Selected Tabs //*[@id="duel_select_1"]
+			
+			//Locate the dropdown
+			WebElement dropDownList = driver.findElement(By.xpath("duel_select_1"));
+			
+			//Putting in a loop
+			for(int i=0; i<6; i++) {
+				
+				dropDownList.click();
+				
+				//Wait till the options in drop down are visible
+				
+				WebDriverWait wait = new WebDriverWait(driver, 15);
+				wait.until(ExpectedConditions.visibilityOf(driver.findElement(By.xpath("//*[@id='duel']/table/tbody/tr/td[3]"))));
+				
+				//Getting list of options
+				List<WebElement> optionsInDropdown = driver.findElements(By.xpath("//*[@id=\"duel\"]/table/tbody/tr/td[3]"));
+				
+				//Getting size of options available
+				int size = optionsInDropdown.size();
+				
+				//Generate a random number within range
+				int randomNumber = ThreadLocalRandom.current().nextInt(0, size);
+				
+				//Selecting random value
+				optionsInDropdown.get(randomNumber).click();
+				
+				try {
+					Thread.sleep(2000);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				
+				////*[@id="duel_select_0_left"]
+				
+				WebElement removeButton = driver.findElement(By.id("duel_select_0_left"));
+				removeButton.isSelected();
+				removeButton.click();
+				
+				
+				
+				
+			}
 			
 		}
 		
