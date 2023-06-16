@@ -8,7 +8,8 @@ import io.cucumber.testng.CucumberOptions;
 				"src/test/resources/features/simpleFeature4.feature" },
 		glue = {"com.cucumberTests.steps"},
 		monochrome = true,
-		dryRun = true
+		dryRun = false,
+		tags = "@add"
 				
 		)
 public class CalculatorRunner extends AbstractTestNGCucumberTests {

@@ -1,127 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="6" passed="6" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-06-15T21:51:34 PDT" name="Default suite" finished-at="2023-06-15T21:51:35 PDT" duration-ms="436">
+  <suite started-at="2023-06-16T00:00:47 PDT" name="Default suite" finished-at="2023-06-16T00:00:57 PDT" duration-ms="10164">
     <groups>
       <group name="cucumber">
-        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.cucumberTests.runners.CalculatorRunner@316bcf94]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.cucumberTests.runners.FirebaseRunner@64d7b720]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test started-at="2023-06-15T21:51:34 PDT" name="Default test" finished-at="2023-06-15T21:51:35 PDT" duration-ms="436">
-      <class name="com.cucumberTests.runners.CalculatorRunner">
-        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:com.cucumberTests.runners.CalculatorRunner@316bcf94]" started-at="2023-06-15T21:51:34 PDT" name="setUpClass" finished-at="2023-06-15T21:51:35 PDT" duration-ms="245" status="PASS">
+    <test started-at="2023-06-16T00:00:47 PDT" name="Default test" finished-at="2023-06-16T00:00:57 PDT" duration-ms="10164">
+      <class name="com.cucumberTests.runners.FirebaseRunner">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:com.cucumberTests.runners.FirebaseRunner@64d7b720]" started-at="2023-06-16T00:00:47 PDT" name="setUpClass" finished-at="2023-06-16T00:00:47 PDT" duration-ms="439" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@160ac7fb]]>
+                <![CDATA[org.testng.TestRunner@a97a895]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.cucumberTests.runners.CalculatorRunner@316bcf94]" started-at="2023-06-15T21:51:35 PDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-06-15T21:51:35 PDT" duration-ms="88" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.cucumberTests.runners.FirebaseRunner@64d7b720]" started-at="2023-06-16T00:00:47 PDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-06-16T00:00:57 PDT" duration-ms="9620" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA["Addition of two numbers"]]>
+                <![CDATA["login with correct credentials"]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA["Calculator functionality"]]>
+                <![CDATA["login functionality"]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.cucumberTests.runners.CalculatorRunner@316bcf94]" started-at="2023-06-15T21:51:35 PDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-06-15T21:51:35 PDT" duration-ms="5" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA["Subtraction of two numbers"]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA["Calculator functionality"]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.cucumberTests.runners.CalculatorRunner@316bcf94]" started-at="2023-06-15T21:51:35 PDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-06-15T21:51:35 PDT" duration-ms="6" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA["Multiplication of two numbers"]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA["Calculator functionality"]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.cucumberTests.runners.CalculatorRunner@316bcf94]" started-at="2023-06-15T21:51:35 PDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-06-15T21:51:35 PDT" duration-ms="9" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA["Addition of two numbers"]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA["Calculator functionality"]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.cucumberTests.runners.CalculatorRunner@316bcf94]" started-at="2023-06-15T21:51:35 PDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-06-15T21:51:35 PDT" duration-ms="4" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA["Addition of two numbers"]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA["Calculator functionality"]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.cucumberTests.runners.CalculatorRunner@316bcf94]" started-at="2023-06-15T21:51:35 PDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-06-15T21:51:35 PDT" duration-ms="4" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA["Addition of two numbers"]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA["Calculator functionality"]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:com.cucumberTests.runners.CalculatorRunner@316bcf94]" started-at="2023-06-15T21:51:35 PDT" name="tearDownClass" finished-at="2023-06-15T21:51:35 PDT" duration-ms="11" status="PASS">
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:com.cucumberTests.runners.FirebaseRunner@64d7b720]" started-at="2023-06-16T00:00:57 PDT" name="tearDownClass" finished-at="2023-06-16T00:00:57 PDT" duration-ms="14" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->
-      </class> <!-- com.cucumberTests.runners.CalculatorRunner -->
+      </class> <!-- com.cucumberTests.runners.FirebaseRunner -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

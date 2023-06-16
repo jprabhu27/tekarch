@@ -1,5 +1,5 @@
 Feature: Calculator functionality
-
+@add
 Scenario Outline: Addition of two numbers
 Given a as <A> and b as <B>
 When i add a and b
