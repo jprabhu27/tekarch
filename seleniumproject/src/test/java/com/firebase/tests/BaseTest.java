@@ -322,6 +322,14 @@ public class BaseTest {
 		}
 	}
 
+	public static void validatePageTitle(String expectedTitle, String pageName) {
+		String actualTitle = driver.getTitle();
+		if (expectedTitle.equals(actualTitle)) {
+			System.out.println("Pass: " + pageName + " is displayed");
+		} else {
+			System.out.println("Fail: " + pageName + " is not displayed");
+		}
+	}
 		//UUID 
 	public static String getUniqueString() {
 		UUID uuid = UUID.randomUUID();
