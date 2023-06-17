@@ -201,16 +201,16 @@ public class BaseTest {
 //		
 //	}
 //	
-//	public void clickElement(WebElement element, String objName) {
-//		
-//		if(element.isDisplayed()) {
-//			element.click();
-//			System.out.println("pass: " +objName + " element clicked");
-//		}else {
-//			
-//			System.out.println("fail: " +objName + "element not displayed");
-//		}
-//	}
+	public void clickElement(WebElement element, String objName) {
+		
+		if(element.isDisplayed()) {
+			element.click();
+			System.out.println("pass: " +objName + " element clicked");
+		}else {
+			
+			System.out.println("fail: " +objName + "element not displayed");
+		}
+	}
 //	
 //	public void goToUrl(String url) {
 //		driver.get(url);

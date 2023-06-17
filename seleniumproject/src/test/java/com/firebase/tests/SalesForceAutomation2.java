@@ -8,6 +8,9 @@ import java.util.Set;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Dictionary;
+import java.util.Enumeration;
+import java.util.Hashtable;
 
 import org.apache.commons.logging.Log;
 import org.apache.logging.log4j.Logger;
@@ -38,6 +41,7 @@ public class SalesForceAutomation2 extends BaseTest {
 		String appPropertiesFilePath = System.getProperty("user.dir")
 				+ "\\src\\test\\resources\\\\applicationData.properties";
 		// String appPropertiesFilePath = "C:/Jaya/JAVA
+
 		// BASICS/seleniumproject/src/test/resources";
 		PropertiesUtility util = new PropertiesUtility();
 		Properties props = util.loadFile(appPropertiesFilePath);
@@ -115,7 +119,9 @@ public class SalesForceAutomation2 extends BaseTest {
 		// Initial setup required before running test case 35
 		// Login to Salesforce and ensure Assets tab is seen
 
-		verifyTabCustomization_35_testcase(props, "Assets", "//*[@id='Asset_Tab']/a");
+		//verifyTabCustomization_35_testcase(props, "Assets", "//*[@id='Asset_Tab']/a");
+		
+		blockingAnEventInCalendar_36_testcase(props);
 
 	}
 
@@ -2428,6 +2434,7 @@ public class SalesForceAutomation2 extends BaseTest {
 	}
 
 	public static void verifyTabCustomization_35_testcase(Properties props, String tabName, String tabXpath) {
+
 		String browser = props.getProperty("browser");
 		launchBrowser(browser);
 
@@ -2546,6 +2553,159 @@ public class SalesForceAutomation2 extends BaseTest {
 
 	}
 
+	public static void blockingAnEventInCalendar_36_testcase(Properties props) {
+
+		String browser = props.getProperty("browser");
+		launchBrowser(browser);
+
+		loginToSalesforce(props);
+
+		// Click Home tab
+		clickElementByXpath("//li[@id ='home_Tab']");
+
+		// Close Dialog
+		driver.findElement(By.xpath("//*[@id='tryLexDialogX']")).click();
+
+		// verify Home Page is displayed
+		validatePageTitle("Salesforce - Developer Edition", "Home page");
+
+		// Verify Current date is displayed as a link
+		WebElement dateLink = driver.findElement(By.xpath("//*[@id='ptBody']/div/div[2]/span[2]/a"));
+		Boolean dateDisplay = dateLink.isDisplayed();
+		System.out.println("The date link displayed is = " + dateDisplay);
+
+		// Click on the current date link
+		dateLink.click();
+		
+		// verify calendar for FirstName and LastName page is displayed
+		WebElement calName = driver.findElement(By.xpath("//*[@id='bCalDiv']/div/div[1]/div[1]/h1"));
+		Boolean calNameDisplay = calName.isDisplayed();
+		System.out.println("The calendar for FirstName and lastName displayed is = " + calNameDisplay);
+
+		// Click on 8 pm link
+		clickElementByXpath("//*[@id='p:f:j_id25:j_id61:28:j_id64']/a");
+
+		// Verify The calendar:New Event page displayed
+		WebElement newEvent = driver.findElement(By.xpath("//*[@id='bodyCell']/div[1]/div[1]/div[1]/h2"));
+		Boolean newEventPage = newEvent.isDisplayed();
+		System.out.println("The calendar New Event page displayed is = "+ newEventPage);
+
+		String parentWindowHandle = driver.getWindowHandle();
+
+		// Click on Subject Combo icon
+		clickElementByXpath("//*[@id='ep']/div[2]/div[4]/table/tbody/tr[2]/td[2]/div/a/img");
+
+		// Wait for Combo Popup
+		try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+
+		String subjectComboPopupHandle = null;
+
+		Set<String> handles = driver.getWindowHandles(); // get all window handles
+		Iterator<String> iterator = handles.iterator();
+		while (iterator.hasNext()) {
+			subjectComboPopupHandle = iterator.next();
+		}
+
+		driver.switchTo().window(subjectComboPopupHandle);
+		
+		// verify the combobox popup should be opened
+		validatePageTitle("ComboBox", "CombBox Popup");
+		
+		// Select Other for subject
+		WebElement otherLink = driver.findElement(By.xpath("/html/body/div[2]/ul/li[5]/a"));
+		otherLink.click();
+
+		try {
+			// If clicking otherLink above, closes the popup, driver's current window is closed
+			System.out.println("Fail: The Comboxbox popup is still open: " + driver.getTitle());
+		}
+		catch(Exception e) {
+			System.out.println("Pass: The Combobox popup is closed");
+		}
+		finally {
+			driver.switchTo().window(parentWindowHandle);
+		}
+		
+		WebElement subjectElement = driver.findElement(By.id("evt5"));
+		String subject = subjectElement.getAttribute("value");
+		
+		if (subject.equalsIgnoreCase("Other")) {
+			System.out.println("Pass: Other is entered in the subject");
+		}
+		else {
+			System.out.println("Fail: Other is not entered in the subject, instead it contains '" + subject + "'");
+		}
+		
+		// click on the End time field
+		clickElementById("EndDateTime_time");
+		
+		// verify the dropdown displayed with time starting from 9pm till 11:30pm
+		// Let's build key/value pairs from 9pm till 11:30pm
+		Dictionary<String, String> dict= new Hashtable<>();
+		dict.put("timePickerItem_42", "9:00 p.m.");
+		dict.put("timePickerItem_43", "9:30 p.m.");
+		dict.put("timePickerItem_44", "10:00 p.m.");
+		dict.put("timePickerItem_45", "10:30 p.m.");
+		dict.put("timePickerItem_46", "11:00 p.m.");
+		dict.put("timePickerItem_47", "11:30 p.m.");
+		
+		try {
+			Enumeration<String> keys = dict.keys();
+			while(keys.hasMoreElements()) {
+				String id = keys.nextElement();
+				String time = dict.get(id);
+				
+				WebElement timePickerEntry = driver.findElement(By.id(id));
+				if (timePickerEntry.isDisplayed())
+					System.out.println("Pass: " + time + " is displayed in dropdown");
+				else
+					System.out.println("Fail: " + time + " is not displayed in dropdown");
+			}
+		}
+		catch (Exception e) {
+			System.out.println("Fail: Unable to confirm Drop down contains time starting from 9:00 PM till 11:30 PM.");
+			e.printStackTrace();
+		}
+		
+		// Select 9 pm from dropdown
+		clickElementById("timePickerItem_42");
+		
+		// verify 9 pm selected in the end
+		WebElement endTime = driver.findElement(By.id("EndDateTime_time"));
+		String endTimeValue = endTime.getAttribute("value");
+		
+		if (endTimeValue.equalsIgnoreCase("9:00 p.m.")) {
+			System.out.println("Pass: 9:00 p.m. is selected in the End");
+		}
+		else {
+			System.out.println("Fail: 9:00 p.m. is not selected in the End. It contains: '" + endTimeValue + "'");
+		}
+		
+		// Click Save Button
+		clickElementByXpath("//*[@id=\"topButtonRow\"]/input[1]");
+
+		
+		// The calendar for First Name and LastName page displayed
+		// //*[@id="bCalDiv"]/div/div[1]/div[1]/h1
+		WebElement newEvent1 = driver.findElement(By.xpath("//*[@id='bCalDiv']/div/div[1]/div[1]/h1"));
+		Boolean newEventPage1 = newEvent1.isDisplayed();
+		System.out.println("The calendar New Event page displayed is = "+ newEventPage1);
+		
+		// with other event in the time slot 8pm to 9pm as a link
+		WebElement otherEvent8to9pmSlot = driver.findElement(By.xpath("//*[@id='p:f:j_id25:j_id69:28:j_id71:0:j_id72:calendarEvent:j_id84']/a"));
+		if (otherEvent8to9pmSlot.isDisplayed()) {
+			System.out.println("Pass: Other event is displayed in the time slot 8:00PM to 9:00PM as a link");
+		} else {
+			System.out.println("Fail: Other event is not displayed in the time slot 8:00PM to 9:00PM as a link");
+		}
+		//driver.close();
+
+	}
+
 	private static void logoutOfSalesforce(Properties props) {
 
 		System.out.println("Attempting to logout");
@@ -2559,6 +2719,5 @@ public class SalesForceAutomation2 extends BaseTest {
 		}
 		System.out.println("Logout successful");
 	}
-	
-	
+
 }
