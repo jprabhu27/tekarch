@@ -114,14 +114,14 @@ public class SalesForceAutomation2 extends BaseTest {
 
 		// verifyFirstLastName_33_testcase(props);
 
-		// updatedLastNameVerify_34_testcase(props) ;
+		updatedLastNameVerify_34_testcase(props) ;
 
-		// Initial setup required before running test case 35
-		// Login to Salesforce and ensure Assets tab is seen
+			// Initial setup required before running test case 35
+			// Login to Salesforce and ensure Assets tab is seen
 
 		//verifyTabCustomization_35_testcase(props, "Assets", "//*[@id='Asset_Tab']/a");
 		
-		blockingAnEventInCalendar_36_testcase(props);
+		//blockingAnEventInCalendar_36_testcase(props);
 
 	}
 
@@ -2414,7 +2414,7 @@ public class SalesForceAutomation2 extends BaseTest {
 					+ expectedFullName + "' in breadcrumb");
 		}
 
-		// Verify UserMenu First and Last Name is updated
+		// Verify User Menu button First and Last Name is updated
 		dropDown = driver.findElement(By.id("userNavLabel"));
 		String actualUserMenuName = dropDown.getText().trim();
 
@@ -2428,10 +2428,26 @@ public class SalesForceAutomation2 extends BaseTest {
 		}
 
 		// Verify the User:First and Last Name has the updated last name
+		
+		//click Home Tab
+		clickElementByXpath("//li[@id ='home_Tab']");
 
-		// driver.close;
+		
+		WebElement userN = driver.findElement(By.xpath("//div[@id='ptBody']/div/div[2]/span[1]/h1/a"));
+		String actualUserName = userN.getText().trim();
 
+		if (expectedFullName.equals(actualUserName)) {
+
+			System.out.println("The updated name '" + actualUserName  + "' is displayed in user :FirstName LastName");
+
+		} else {
+			System.out.println("The updated name '" + actualUserName  + " doesn't match " + expectedFullName
+					+ "' in user menu");
+		}
+
+			 driver.close();
 	}
+	
 
 	public static void verifyTabCustomization_35_testcase(Properties props, String tabName, String tabXpath) {
 
@@ -2702,7 +2718,8 @@ public class SalesForceAutomation2 extends BaseTest {
 		} else {
 			System.out.println("Fail: Other event is not displayed in the time slot 8:00PM to 9:00PM as a link");
 		}
-		//driver.close();
+		
+		driver.close();
 
 	}
 
