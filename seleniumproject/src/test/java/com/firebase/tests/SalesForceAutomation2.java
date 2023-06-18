@@ -124,7 +124,7 @@ public class SalesForceAutomation2 extends BaseTest {
 		//blockingAnEventInCalendar_36_testcase(props);
 
 	}
-
+	//@Test
 	private static void login_error_message_1_testcase(Properties props) throws InterruptedException {
 		// Test case 1 Login Error message
 		String browser = props.getProperty("browser");
@@ -143,7 +143,8 @@ public class SalesForceAutomation2 extends BaseTest {
 
 		driver.close();
 	}
-
+	
+	//@Test
 	private static void login_to_salesforce_2_testcase(Properties props) throws InterruptedException {
 		// Test Case 2 Login to SalesForce 2
 		String browser = props.getProperty("browser");
@@ -203,6 +204,7 @@ public class SalesForceAutomation2 extends BaseTest {
 		driver.close();
 	}
 
+	//@Test
 	public static void forgot_password_4A_testcase(Properties props) throws InterruptedException {
 
 		// Test case 4a Forgot Password
@@ -235,6 +237,7 @@ public class SalesForceAutomation2 extends BaseTest {
 
 	}
 
+	//@Test
 	public static void forgot_password_4B_testcase(Properties props) throws InterruptedException {
 
 		String browser = props.getProperty("browser");
@@ -324,7 +327,8 @@ public class SalesForceAutomation2 extends BaseTest {
 		driver.close();
 
 	}
-
+	
+	//@Test
 	public static void myProfile_option_6_testcase(Properties props) {
 
 		String browser = props.getProperty("browser");
@@ -459,7 +463,8 @@ public class SalesForceAutomation2 extends BaseTest {
 
 		// driver.close();
 	}
-
+	
+	//@Test
 	public static void mySettings_7_testcase(Properties props) {
 
 		String browser = props.getProperty("browser");
@@ -570,6 +575,7 @@ public class SalesForceAutomation2 extends BaseTest {
 
 	}
 
+	//@Test
 	public static void developersConsole_option_8_testcase(Properties props) throws InterruptedException {
 
 		String browser = props.getProperty("browser");
@@ -681,6 +687,7 @@ public class SalesForceAutomation2 extends BaseTest {
 
 	}
 
+	@Test
 	public static void createAnAccount_option_10_testcase(Properties props) {
 
 		String browser = props.getProperty("browser");
@@ -795,6 +802,7 @@ public class SalesForceAutomation2 extends BaseTest {
 
 	}
 
+	//@Test
 	public static void createANewView_11_testcase(Properties props) {
 
 		String browser = props.getProperty("browser");
@@ -2721,6 +2729,213 @@ public class SalesForceAutomation2 extends BaseTest {
 		
 		driver.close();
 
+	}
+	
+	public static void blockingAnEventInCalendar_37_testcase(Properties props) {
+		
+		String browser = props.getProperty("browser");
+		launchBrowser(browser);
+
+		loginToSalesforce(props);
+
+		// Click Home tab
+		clickElementByXpath("//li[@id ='home_Tab']");
+
+		// Close Dialog
+		driver.findElement(By.xpath("//*[@id='tryLexDialogX']")).click();
+
+		// verify Home Page is displayed
+		validatePageTitle("Salesforce - Developer Edition", "Home page");
+
+		// Verify Current date is displayed as a link
+		WebElement dateLink = driver.findElement(By.xpath("//*[@id='ptBody']/div/div[2]/span[2]/a"));
+		Boolean dateDisplay = dateLink.isDisplayed();
+		System.out.println("The date link displayed is = " + dateDisplay);
+
+		// Click on the current date link
+				dateLink.click();
+				
+				// verify calendar for FirstName and LastName page is displayed
+				WebElement calName = driver.findElement(By.xpath("//*[@id='bCalDiv']/div/div[1]/div[1]/h1"));
+				Boolean calNameDisplay = calName.isDisplayed();
+				System.out.println("The calendar for FirstName and lastName displayed is = " + calNameDisplay);
+
+				// Click on 4 pm link
+				clickElementByXpath("//*[@id=\"p:f:j_id25:j_id61:20:j_id64\"]/a");
+
+				// Verify The calendar:New Event page displayed
+				WebElement newEvent = driver.findElement(By.xpath("//*[@id='bodyCell']/div[1]/div[1]/div[1]/h2"));
+				Boolean newEventPage = newEvent.isDisplayed();
+				System.out.println("The calendar New Event page displayed is = "+ newEventPage);
+
+				String parentWindowHandle = driver.getWindowHandle();
+
+				// Click on Subject Combo icon
+				clickElementByXpath("//*[@id='ep']/div[2]/div[4]/table/tbody/tr[2]/td[2]/div/a/img");
+
+				// Wait for Combo Popup
+				try {
+					Thread.sleep(2000);
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
+
+				String subjectComboPopupHandle = null;
+
+				Set<String> handles = driver.getWindowHandles(); // get all window handles
+				Iterator<String> iterator = handles.iterator();
+				while (iterator.hasNext()) {
+					subjectComboPopupHandle = iterator.next();
+				}
+
+				driver.switchTo().window(subjectComboPopupHandle);
+				
+				// verify the combobox popup should be opened
+				validatePageTitle("ComboBox", "CombBox Popup");
+				
+				// Select Other for subject
+				WebElement otherLink = driver.findElement(By.xpath("/html/body/div[2]/ul/li[5]/a"));
+				otherLink.click();
+
+				try {
+					// If clicking otherLink above, closes the popup, driver's current window is closed
+					System.out.println("Fail: The Comboxbox popup is still open: " + driver.getTitle());
+				}
+				catch(Exception e) {
+					System.out.println("Pass: The Combobox popup is closed");
+				}
+				finally {
+					driver.switchTo().window(parentWindowHandle);
+				}
+				
+				WebElement subjectElement = driver.findElement(By.id("evt5"));
+				String subject = subjectElement.getAttribute("value");
+				
+				if (subject.equalsIgnoreCase("Other")) {
+					System.out.println("Pass: Other is entered in the subject");
+				}
+				else {
+					System.out.println("Fail: Other is not entered in the subject, instead it contains '" + subject + "'");
+				}
+				
+				// click on the End time field
+				clickElementById("EndDateTime_time");
+				
+				// verify the dropdown displayed with time starting from 5pm till 11:30pm
+				// Let's build key/value pairs from 5pm till 11:30pm
+				Dictionary<String, String> dict= new Hashtable<>();
+				dict.put("timePickerItem_34", "5:00 p.m.");
+				dict.put("timePickerItem_35", "5:30 p.m.");
+				dict.put("timePickerItem_36", "6:00 p.m.");
+				dict.put("timePickerItem_37", "6:30 p.m.");
+				dict.put("timePickerItem_38", "7:00 p.m.");
+				dict.put("timePickerItem_39", "7:30 p.m.");
+				dict.put("timePickerItem_40", "8:00 p.m.");
+				dict.put("timePickerItem_41", "8:30 p.m.");					
+				dict.put("timePickerItem_42", "9:00 p.m.");
+				dict.put("timePickerItem_43", "9:30 p.m.");
+				dict.put("timePickerItem_44", "10:00 p.m.");
+				dict.put("timePickerItem_45", "10:30 p.m.");
+				dict.put("timePickerItem_46", "11:00 p.m.");
+				dict.put("timePickerItem_47", "11:30 p.m.");
+				
+				try {
+					Enumeration<String> keys = dict.keys();
+					while(keys.hasMoreElements()) {
+						String id = keys.nextElement();
+						String time = dict.get(id);
+						
+						WebElement timePickerEntry = driver.findElement(By.id(id));
+						if (timePickerEntry.isDisplayed())
+							System.out.println("Pass: " + time + " is displayed in dropdown");
+						else
+							System.out.println("Fail: " + time + " is not displayed in dropdown");
+					}
+				}
+				catch (Exception e) {
+					System.out.println("Fail: Unable to confirm Drop down contains time starting from 9:00 PM till 11:30 PM.");
+					e.printStackTrace();
+				}
+				
+				
+				// Select 7 pm from dropdown
+				clickElementById("timePickerItem_38");
+				
+				// verify 7 pm selected in the end
+				WebElement endTime = driver.findElement(By.id("EndDateTime_time"));
+				String endTimeValue = endTime.getAttribute("value");
+				
+				if (endTimeValue.equalsIgnoreCase("7:00 p.m.")) {
+					System.out.println("Pass: 7:00 p.m. is selected in the End");
+				}
+				else {
+					System.out.println("Fail: 7:00 p.m. is not selected in the End. It contains: '" + endTimeValue + "'");
+				}
+				
+				
+				//Check recurrence check box
+				WebElement recurrenceCheckBox = driver.findElement(By.id("IsRecurrence"));
+				Boolean checkBox = recurrenceCheckBox.isDisplayed();
+				recurrenceCheckBox.click();
+				System.out.println("The recurrence check box clicked is= " +checkBox);
+				
+				//'Frequency', 'Start Date', 'End Date' sections should be displayed.
+				WebElement section = driver.findElement(By.xpath("//*[@id=\"ep\"]/div[2]/div[8]"));
+				Boolean sectionDisplayed = section.isDisplayed();
+				System.out.println("The recurrence section displayed is = " +sectionDisplayed);
+				
+				//Click the Weekly radio button
+				WebElement weeklyRadioButton = driver.findElement(By.id("rectypeftw"));
+				Boolean weeklyRadio = weeklyRadioButton.isSelected();
+				System.out.println("The weekly Raio Button selected is: =" +weeklyRadio);
+				
+				//'Recurs Every..' section should be displayed with '1' entered in it.
+				
+				
+				
+				//Current day of the week should be checked. Ex:Thursday
+				WebElement currentDay = driver.findElement(By.id("16"));
+				Boolean daySelected = currentDay.isSelected();
+				System.out.println("The day of the week checked is: =" +daySelected);
+				
+				//Enter End Date
+				WebElement recurrenceEnd = driver.findElement(By.id("RecurrenceEndDateOnly"));
+				Boolean endDate = recurrenceEnd.isDisplayed();
+				recurrenceEnd.click();
+				System.out.println("The day of the week checked is: =" +endDate );
+				
+				//Click on the 'End Date' field and select 2 weeks from then.
+				
+				
+				
+				//Verify The 'End Date' should be selected and the calendar should be closed.
+				
+				
+				
+				
+				
+				
+				// Click Save Button
+				clickElementByXpath("//*[@id=\"topButtonRow\"]/input[1]");
+
+				
+				// The calendar for First Name and LastName page displayed
+				// //*[@id="bCalDiv"]/div/div[1]/div[1]/h1
+				WebElement newEvent1 = driver.findElement(By.xpath("//*[@id='bCalDiv']/div/div[1]/div[1]/h1"));
+				Boolean newEventPage1 = newEvent1.isDisplayed();
+				System.out.println("The calendar New Event page displayed is = "+ newEventPage1);
+				
+				// ?? with other event in the time slot 4pm to 7pm as a link
+				WebElement otherEvent8to9pmSlot = driver.findElement(By.xpath("//*[@id='p:f:j_id25:j_id69:28:j_id71:0:j_id72:calendarEvent:j_id84']/a"));
+				if (otherEvent8to9pmSlot.isDisplayed()) {
+					System.out.println("Pass: Other event is displayed in the time slot 8:00PM to 9:00PM as a link");
+				} else {
+					System.out.println("Fail: Other event is not displayed in the time slot 8:00PM to 9:00PM as a link");
+				}
+				
+				driver.close();
+		
+		
 	}
 
 	private static void logoutOfSalesforce(Properties props) {

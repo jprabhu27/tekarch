@@ -1,11 +1,23 @@
 package com.cucumberTests.steps;
 
+import java.io.File;
+import java.io.IOException;
+
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
-
+import org.openqa.selenium.TakesScreenshot;
+import io.cucumber.java.After;
+import io.cucumber.java.AfterAll;
+import io.cucumber.java.AfterStep;
+import io.cucumber.java.Before;
+import io.cucumber.java.BeforeAll;
+import io.cucumber.java.BeforeStep;
+import io.cucumber.java.Scenario;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -14,12 +26,55 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 public class FirebaseStepDef {
 	
 	WebDriver driver;
+	
+	@BeforeStep
+	public void before_each_step() {
+		
+		System.out.println("Before each step executed");
+	}
+	
+	@AfterStep
+	public void after_each_step(Scenario sc) throws IOException {
+		sc.log("After step executed");
+		System.out.println("After each step executed");
+		//To take screenshot
+		if((sc.isFailed())) {
+		File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+		byte[]fileContent = FileUtils.readFileToByteArray(screenshot);
+		sc.attach(fileContent, "image/png", "screenshot");
+		}
+	
+	}
+	
+	@Before
+	public void before_each_scenario() {
+		
+		WebDriverManager.chromedriver().setup();
+	    driver = new ChromeDriver();
+	    driver.manage().window().maximize();
+	}
+	
+	@After
+	public void after_each_scenario() {
+		
+		driver.close();
+	}
+	
+	@BeforeAll
+	public static void Before_Test() {
+		System.out.println("Before all the Scenarios gets executed");
+	}
+	
+	@AfterAll
+	public static void After_All() {
+		
+		System.out.println("Ater all the Scenarios gets executed");
+	}
+	
 	@Given("application is up and running and in loginpage")
 	public void application_is_up_and_running_and_in_loginpage() throws InterruptedException {
 		
-	    WebDriverManager.chromedriver().setup();
-	    driver = new ChromeDriver();
-	    driver.manage().window().maximize();
+    
 	    driver.get("https://qa-tekarch.firebaseapp.com");
 	    Thread.sleep(5000);
 	}

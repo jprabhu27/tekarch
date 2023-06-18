@@ -1,7 +1,10 @@
 package com.cucumberTests.steps;
 
+import java.util.List;
+
 import org.testng.Assert;
 
+import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -16,7 +19,7 @@ public class CalculatorStepDef {
 	    a=100;
 	    b=2;
 	}
-
+	
 	@When("i add a and b")
 	public void i_add_a_and_b() {
 	    // Write code here that turns the phrase above into concrete actions
@@ -28,7 +31,7 @@ public class CalculatorStepDef {
 	@Then("result should be sum of two numbers")
 	public void result_should_be_sum_of_two_numbers() {
 	    // Write code here that turns the phrase above into concrete actions
-		int exp = 102;
+		int exp = 55;
 	   Assert.assertEquals(res, exp);
 		
 	   }
@@ -69,8 +72,19 @@ public class CalculatorStepDef {
 	    Assert.assertEquals(res, exp);
 		
 	}
+	
+	@Given ("a and b and c and d")
+	public void a_and_b_and_c_and_d(DataTable dataTable) {
 
-		
+		List<List<String>> data = dataTable.asLists();
+		System.out.println(data.get(0).get(0));
+		a = Integer.parseInt(data.get(0).get(0));
+		b = Integer.parseInt(data.get(0).get(1));
+				
+		System.out.println(data.get(0).get(1));
+		System.out.println(data.get(1).get(0));
+		System.out.println(data.get(1).get(1));
+	}	
 }
 
 	

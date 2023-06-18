@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.cucumberTests.runners.FirebaseRunner">
+      <class name="com.automation.runners.SalesforceRunner">
         <methods>
           <include name="setUpClass"/>
+          <include name="runScenario" invocation-numbers="1"/>
           <include name="tearDownClass"/>
-          <include name="runScenario" invocation-numbers="0"/>
         </methods>
-      </class> <!-- com.cucumberTests.runners.FirebaseRunner -->
+      </class> <!-- com.automation.runners.SalesforceRunner -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
