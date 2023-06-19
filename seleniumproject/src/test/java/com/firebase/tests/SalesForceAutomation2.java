@@ -2,10 +2,12 @@ package com.firebase.tests;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.time.format.TextStyle;
 import java.util.Iterator;
 import java.util.Properties;
 import java.util.Set;
 import java.util.List;
+import java.util.Locale;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Dictionary;
@@ -114,7 +116,7 @@ public class SalesForceAutomation2 extends BaseTest {
 
 		// verifyFirstLastName_33_testcase(props);
 
-		updatedLastNameVerify_34_testcase(props);
+		//updatedLastNameVerify_34_testcase(props);
 
 		// Initial setup required before running test case 35
 		// Login to Salesforce and ensure Assets tab is seen
@@ -123,6 +125,8 @@ public class SalesForceAutomation2 extends BaseTest {
 		// "//*[@id='Asset_Tab']/a");
 
 		// blockingAnEventInCalendar_36_testcase(props);
+
+		blockingAnEventInCalendar_37_testcase(props);
 
 	}
 
@@ -881,7 +885,8 @@ public class SalesForceAutomation2 extends BaseTest {
 		driver.close();
 	}
 
-	public static void editView_12_testcase(Properties props) {
+	//@Test
+		public static void editView_12_testcase(Properties props) {
 
 		String browser = props.getProperty("browser");
 		launchBrowser(browser);
@@ -970,6 +975,7 @@ public class SalesForceAutomation2 extends BaseTest {
 
 	}
 
+	//@Test
 	public static void mergeAccounts_13_testcase(Properties props) {
 
 		String browser = props.getProperty("browser");
@@ -1140,6 +1146,7 @@ public class SalesForceAutomation2 extends BaseTest {
 		driver.close();
 	}
 
+	//@Test
 	public static void opportunities_15_testcase(Properties props) {
 
 		String browser = props.getProperty("browser");
@@ -1315,6 +1322,7 @@ public class SalesForceAutomation2 extends BaseTest {
 
 	}
 
+	//@Test
 	public static void pipelineReport_17_testcase(Properties props) {
 
 		String browser = props.getProperty("browser");
@@ -1385,6 +1393,7 @@ public class SalesForceAutomation2 extends BaseTest {
 
 	}
 
+	//@Test
 	public static void stuckOpportunities_18_testcase(Properties props) {
 
 		String browser = props.getProperty("browser");
@@ -1455,6 +1464,7 @@ public class SalesForceAutomation2 extends BaseTest {
 
 	}
 
+	//@Test
 	public static void quarterlySummartReport_19_testcase(Properties props) {
 
 		String browser = props.getProperty("browser");
@@ -1502,6 +1512,7 @@ public class SalesForceAutomation2 extends BaseTest {
 
 	}
 
+	//@Test
 	public static void quarterlySummartReport_20_testcase(Properties props) {
 
 		String browser = props.getProperty("browser");
@@ -1541,6 +1552,7 @@ public class SalesForceAutomation2 extends BaseTest {
 
 	}
 
+	//@Test
 	public static void validateViewDropDown_21_testcase(Properties props) {
 
 		String browser = props.getProperty("browser");
@@ -1632,6 +1644,7 @@ public class SalesForceAutomation2 extends BaseTest {
 
 	}
 
+	//@Test
 	public static void functionalityOfGoBtn_22_testcase(Properties props) {
 
 		String browser = props.getProperty("browser");
@@ -1714,6 +1727,7 @@ public class SalesForceAutomation2 extends BaseTest {
 
 	}
 
+	//@Test
 	public static void todaysLeads_23_testcase(Properties props) {
 
 		String browser = props.getProperty("browser");
@@ -1771,6 +1785,7 @@ public class SalesForceAutomation2 extends BaseTest {
 
 	}
 
+	//@Test
 	public static void newLeads_24_testcase(Properties props) {
 
 		String browser = props.getProperty("browser");
@@ -1894,7 +1909,8 @@ public class SalesForceAutomation2 extends BaseTest {
 
 		driver.close();
 	}
-
+	
+	//@Test
 	public static void viewUniqueName_26_testcase(Properties props) {
 
 		String browser = props.getProperty("browser");
@@ -1956,6 +1972,7 @@ public class SalesForceAutomation2 extends BaseTest {
 
 	}
 
+	//@Test
 	public static void recentCreatedContact_27_testcase(Properties props) {
 
 		String browser = props.getProperty("browser");
@@ -1998,6 +2015,7 @@ public class SalesForceAutomation2 extends BaseTest {
 
 	}
 
+	//@Test
 	public static void myContacts_28_testcase(Properties props) {
 
 		String browser = props.getProperty("browser");
@@ -2040,6 +2058,7 @@ public class SalesForceAutomation2 extends BaseTest {
 
 	}
 
+	//@Test
 	public static void contactName_29_testcase(Properties props) {
 
 		String browser = props.getProperty("browser");
@@ -2083,6 +2102,7 @@ public class SalesForceAutomation2 extends BaseTest {
 
 	}
 
+	//@Test
 	public static void contactName_30_testcase(Properties props) {
 
 		String browser = props.getProperty("browser");
@@ -2132,6 +2152,7 @@ public class SalesForceAutomation2 extends BaseTest {
 
 	}
 
+	//@Test
 	public static void cancelButton_31_testcase(Properties props) {
 
 		String browser = props.getProperty("browser");
@@ -2186,7 +2207,8 @@ public class SalesForceAutomation2 extends BaseTest {
 		driver.close();
 
 	}
-
+	
+	//@Test
 	public static void saveNewButton_32_testcase(Properties props) {
 
 		String browser = props.getProperty("browser");
@@ -2320,6 +2342,7 @@ public class SalesForceAutomation2 extends BaseTest {
 		driver.close();
 	}
 
+	//@Test
 	public static void updatedLastNameVerify_34_testcase(Properties props) {
 
 		String browser = props.getProperty("browser");
@@ -2456,7 +2479,7 @@ public class SalesForceAutomation2 extends BaseTest {
 
 		driver.close();
 	}
-
+	//@Test
 	public static void verifyTabCustomization_35_testcase(Properties props, String tabName, String tabXpath) {
 
 		String browser = props.getProperty("browser");
@@ -2876,13 +2899,14 @@ public class SalesForceAutomation2 extends BaseTest {
 
 		// Click the Weekly radio button
 		WebElement weeklyRadioButton = driver.findElement(By.id("rectypeftw"));
+		weeklyRadioButton.click();
 		Boolean weeklyRadio = weeklyRadioButton.isSelected();
 		System.out.println("The weekly Raio Button selected is: =" + weeklyRadio);
 
 		// 'Recurs Every..' section should be displayed with '1' entered in it.
 		WebElement every = driver.findElement(By.id("wi"));
 		Boolean everybox = every.isDisplayed();
-		System.out.println("The everybox displayed is = ");
+		System.out.println("The everybox displayed is = " + everybox);
 		String everytext = every.getAttribute("value");
 		if (everytext.equalsIgnoreCase("1")) {
 			System.out.println("pass: The value displayed is 1");
@@ -2891,45 +2915,64 @@ public class SalesForceAutomation2 extends BaseTest {
 		}
 
 		// Current day of the week should be checked. Ex:Thursday
-		WebElement curr = driver.findElement(By.id("16"));
-		Boolean daySelected = curr.isSelected();
-		System.out.println("The day of the week checked is: =" + daySelected);
+		Dictionary<String, String> dayDict = new Hashtable<>();
+		dayDict.put("Sunday", "1");
+		dayDict.put("Monday", "2");
+		dayDict.put("Tuesday", "4");
+		dayDict.put("Wednesday", "8");
+		dayDict.put("Thursday", "16");
+		dayDict.put("Friday", "32");
+		dayDict.put("Saturday", "64");
+		
+		String dayOfWeek = LocalDate.now().getDayOfWeek().getDisplayName(TextStyle.FULL, Locale.getDefault());
+		String checkBoxId = dayDict.get(dayOfWeek);
+
+		WebElement dayOfWeekCheckBox = driver.findElement(By.id(checkBoxId));
+		Boolean daySelected = dayOfWeekCheckBox.isSelected();
+		System.out.println("The day of the week '" + dayOfWeek + "' is checked: =" + daySelected);
 
 		// Enter End Date
 		WebElement recurrenceEnd = driver.findElement(By.id("RecurrenceEndDateOnly"));
-		Boolean endDate = recurrenceEnd.isDisplayed();
 		recurrenceEnd.click();
-		System.out.println("The day of the week checked is: =" + endDate);
 
 		// Click on the 'End Date' field and select 2 weeks from then.
+		LocalDate endDate = LocalDate.now().plusWeeks(2);
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+		String formattedDate = endDate.format(formatter);
+		recurrenceEnd.sendKeys(formattedDate);
 		
-
-		// Verify The 'End Date' should be selected and the calendar should be closed.
-		
-
 		// Click Save Button
 		clickElementByXpath("//*[@id=\"topButtonRow\"]/input[1]");
 		
 		//Click month view icon
-		
 		WebElement monthView = driver.findElement(By.xpath("//*[@id=\"bCalDiv\"]/div/div[2]/span[2]/a[3]/img"));
 		monthView.click();
 		
-		// The calendar for First Name and LastName page displayed
-		// //*[@id="bCalDiv"]/div/div[1]/div[1]/h1
-		WebElement newEvent1 = driver.findElement(By.xpath("//*[@id='bCalDiv']/div/div[1]/div[1]/h1"));
-		Boolean newEventPage1 = newEvent1.isDisplayed();
-		System.out.println("The calendar New Event page displayed is = " + newEventPage1);
-
-		// ?? with other event in the time slot 4pm to 7pm as a link
-		WebElement otherEvent8to9pmSlot = driver
-				.findElement(By.xpath("//*[@id='p:f:j_id25:j_id69:28:j_id71:0:j_id72:calendarEvent:j_id84']/a"));
-		if (otherEvent8to9pmSlot.isDisplayed()) {
-			System.out.println("Pass: Other event is displayed in the time slot 8:00PM to 9:00PM as a link");
-		} else {
-			System.out.println("Fail: Other event is not displayed in the time slot 8:00PM to 9:00PM as a link");
-		}
-
+		// The calendar for First Name and LastName Month View page displayed
+		WebElement monthViewHeading = driver.findElement(By.xpath("//*[@id='bodyCell']/div[1]/div[1]/div[1]/h1"));
+		if (monthViewHeading.getText().contains("Month View"))
+			System.out.println("Month View Page is displayed: " + monthViewHeading.getText());
+		else
+			System.out.println("Month View Page is not displayed: " + monthViewHeading.getText());
+		
+		// Current date and a week from current date should have the 'Other' event blocked as a link.
+		String day = Integer.toString(LocalDate.now().getDayOfMonth());
+		WebElement todayLink = driver.findElement(By.linkText(day));
+		// <td> cell in month view for the given date is at grand parent level from the date link
+		WebElement todayLinkGrandParent = todayLink.findElement(By.xpath("./../.."));
+		if (todayLinkGrandParent.getText().contains("Other"))
+			System.out.println("Pass: Current date has 'Other' event blocked");
+		else
+			System.out.println("Fail: Current date does not have 'Other' event blocked");
+		
+		day = Integer.toString(LocalDate.now().plusWeeks(1).getDayOfMonth());
+		WebElement nextWeekLink = driver.findElement(By.linkText(day));
+		WebElement nextWeekLinkGrandParent = nextWeekLink.findElement(By.xpath("./../.."));
+		if (nextWeekLinkGrandParent.getText().contains("Other"))
+			System.out.println("Pass: Week from current date has 'Other' event blocked");
+		else
+			System.out.println("Fail: Week from current date does not have 'Other' event blocked");
+		
 		driver.close();
 
 	}
@@ -2949,3 +2992,4 @@ public class SalesForceAutomation2 extends BaseTest {
 	}
 
 }
+
