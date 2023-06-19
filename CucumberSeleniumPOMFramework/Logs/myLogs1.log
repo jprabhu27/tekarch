@@ -3278,3 +3278,135 @@
 20230618 17:06:30 INFO  [main] base.BasePage BasePage.java129 - Pass: Logout Button element clicked
 20230618 17:06:32 INFO  [main] steps.SalesforceStepDef SalesforceStepDef.java505 - Pass: expected title 'Login | Salesforce' is displayed
 20230618 17:06:32 INFO  [main] steps.SalesforceStepDef SalesforceStepDef.java288 - Current browser closed
+20230618 17:45:51 INFO  [main] steps.SalesforceStepDef SalesforceStepDef.java277 - Chrome browser opened
+20230618 17:45:51 INFO  [main] steps.SalesforceStepDef SalesforceStepDef.java94 - Going to url https://login.salesforce.com/
+20230618 17:45:52 INFO  [main] steps.SalesforceStepDef SalesforceStepDef.java283 - https://login.salesforce.com/is entered
+20230618 17:45:52 INFO  [main] steps.SalesforceStepDef SalesforceStepDef.java505 - Pass: expected title 'Login | Salesforce' is displayed
+20230618 17:45:52 INFO  [main] base.BasePage BasePage.java90 - Pass: username field element cleared
+20230618 17:45:52 INFO  [main] base.BasePage BasePage.java75 - Pass: username field is entered
+20230618 17:45:52 INFO  [main] steps.SalesforceStepDef SalesforceStepDef.java257 - expectedUsername: jprabhu.27@gmail.com
+20230618 17:45:52 INFO  [main] steps.SalesforceStepDef SalesforceStepDef.java258 - actualUsername: jprabhu.27@gmail.com
+20230618 17:45:53 INFO  [main] base.BasePage BasePage.java90 - Pass: password field element cleared
+20230618 17:45:53 INFO  [main] steps.SalesforceStepDef SalesforceStepDef.java167 - Password field is empty
+20230618 17:45:53 INFO  [main] base.BasePage BasePage.java129 - Pass: login button element clicked
+20230618 17:45:53 INFO  [main] steps.SalesforceStepDef SalesforceStepDef.java177 - Expected error message is displayed: Please enter your password.
+20230618 17:45:54 INFO  [main] steps.SalesforceStepDef SalesforceStepDef.java288 - Current browser closed
+20230618 17:45:55 INFO  [main] steps.SalesforceStepDef SalesforceStepDef.java277 - Chrome browser opened
+20230618 17:45:55 INFO  [main] steps.SalesforceStepDef SalesforceStepDef.java94 - Going to url https://login.salesforce.com/
+20230618 17:45:56 INFO  [main] steps.SalesforceStepDef SalesforceStepDef.java283 - https://login.salesforce.com/is entered
+20230618 17:45:56 INFO  [main] steps.SalesforceStepDef SalesforceStepDef.java505 - Pass: expected title 'Login | Salesforce' is displayed
+20230618 17:45:56 INFO  [main] base.BasePage BasePage.java90 - Pass: username field element cleared
+20230618 17:45:56 INFO  [main] base.BasePage BasePage.java75 - Pass: username field is entered
+20230618 17:45:57 INFO  [main] base.BasePage BasePage.java90 - Pass: password field element cleared
+20230618 17:45:57 INFO  [main] base.BasePage BasePage.java75 - Pass: password field is entered
+20230618 17:45:57 INFO  [main] base.BasePage BasePage.java129 - Pass: login button element clicked
+20230618 17:46:03 INFO  [main] steps.SalesforceStepDef SalesforceStepDef.java505 - Pass: expected title 'Home Page ~ Salesforce - Developer Edition' is displayed
+20230618 17:46:03 INFO  [main] steps.SalesforceStepDef SalesforceStepDef.java288 - Current browser closed
+20230618 17:46:04 INFO  [main] steps.SalesforceStepDef SalesforceStepDef.java277 - Chrome browser opened
+20230618 17:46:04 INFO  [main] steps.SalesforceStepDef SalesforceStepDef.java94 - Going to url https://login.salesforce.com/
+20230618 17:46:05 INFO  [main] steps.SalesforceStepDef SalesforceStepDef.java283 - https://login.salesforce.com/is entered
+20230618 17:46:05 INFO  [main] steps.SalesforceStepDef SalesforceStepDef.java505 - Pass: expected title 'Login | Salesforce' is displayed
+20230618 17:46:05 INFO  [main] base.BasePage BasePage.java90 - Pass: username field element cleared
+20230618 17:46:06 INFO  [main] base.BasePage BasePage.java75 - Pass: username field is entered
+20230618 17:46:06 INFO  [main] base.BasePage BasePage.java90 - Pass: password field element cleared
+20230618 17:46:06 INFO  [main] base.BasePage BasePage.java75 - Pass: password field is entered
+20230618 17:46:06 INFO  [main] steps.SalesforceStepDef SalesforceStepDef.java319 - Remember Me checkbox is checked
+20230618 17:46:06 INFO  [main] base.BasePage BasePage.java129 - Pass: login button element clicked
+20230618 17:46:12 INFO  [main] steps.SalesforceStepDef SalesforceStepDef.java505 - Pass: expected title 'Home Page ~ Salesforce - Developer Edition' is displayed
+20230618 17:46:12 INFO  [main] base.BasePage BasePage.java129 - Pass: Username dropdown element clicked
+20230618 17:46:12 INFO  [main] base.BasePage BasePage.java129 - Pass: Logout Button element clicked
+20230618 17:46:14 INFO  [main] steps.SalesforceStepDef SalesforceStepDef.java505 - Pass: expected title 'Login | Salesforce' is displayed
+20230618 17:46:14 INFO  [main] steps.SalesforceStepDef SalesforceStepDef.java257 - expectedUsername: jprabhu.27@gmail.com
+20230618 17:46:14 INFO  [main] steps.SalesforceStepDef SalesforceStepDef.java258 - actualUsername: jprabhu.27@gmail.com
+20230618 17:46:14 INFO  [main] steps.SalesforceStepDef SalesforceStepDef.java288 - Current browser closed
+20230618 17:46:16 INFO  [main] steps.SalesforceStepDef SalesforceStepDef.java277 - Chrome browser opened
+20230618 17:46:16 INFO  [main] steps.SalesforceStepDef SalesforceStepDef.java94 - Going to url https://login.salesforce.com/
+20230618 17:46:17 INFO  [main] steps.SalesforceStepDef SalesforceStepDef.java283 - https://login.salesforce.com/is entered
+20230618 17:46:17 INFO  [main] base.BasePage BasePage.java90 - Pass: username field element cleared
+20230618 17:46:17 INFO  [main] base.BasePage BasePage.java75 - Pass: username field is entered
+20230618 17:46:17 INFO  [main] base.BasePage BasePage.java90 - Pass: password field element cleared
+20230618 17:46:17 INFO  [main] base.BasePage BasePage.java75 - Pass: password field is entered
+20230618 17:46:18 INFO  [main] base.BasePage BasePage.java129 - Pass: login button element clicked
+20230618 17:46:23 INFO  [main] steps.SalesforceStepDef SalesforceStepDef.java505 - Pass: expected title 'Home Page ~ Salesforce - Developer Edition' is displayed
+20230618 17:46:23 INFO  [main] base.BasePage BasePage.java129 - Pass: Username dropdown element clicked
+20230618 17:46:23 INFO  [main] steps.SalesforceStepDef SalesforceStepDef.java227 - Username dropdown options match the expected list.
+20230618 17:46:23 INFO  [main] steps.SalesforceStepDef SalesforceStepDef.java288 - Current browser closed
+20230618 17:46:25 INFO  [main] steps.SalesforceStepDef SalesforceStepDef.java277 - Chrome browser opened
+20230618 17:46:25 INFO  [main] steps.SalesforceStepDef SalesforceStepDef.java94 - Going to url https://login.salesforce.com/
+20230618 17:46:26 INFO  [main] steps.SalesforceStepDef SalesforceStepDef.java283 - https://login.salesforce.com/is entered
+20230618 17:46:26 INFO  [main] base.BasePage BasePage.java90 - Pass: username field element cleared
+20230618 17:46:26 INFO  [main] base.BasePage BasePage.java75 - Pass: username field is entered
+20230618 17:46:26 INFO  [main] base.BasePage BasePage.java90 - Pass: password field element cleared
+20230618 17:46:26 INFO  [main] base.BasePage BasePage.java75 - Pass: password field is entered
+20230618 17:46:27 INFO  [main] base.BasePage BasePage.java129 - Pass: login button element clicked
+20230618 17:46:32 INFO  [main] base.BasePage BasePage.java129 - Pass: Username dropdown element clicked
+20230618 17:46:32 INFO  [main] steps.SalesforceStepDef SalesforceStepDef.java227 - Username dropdown options match the expected list.
+20230618 17:46:32 INFO  [main] base.BasePage BasePage.java129 - Pass: Logout Button element clicked
+20230618 17:46:34 INFO  [main] steps.SalesforceStepDef SalesforceStepDef.java505 - Pass: expected title 'Login | Salesforce' is displayed
+20230618 17:46:34 INFO  [main] steps.SalesforceStepDef SalesforceStepDef.java288 - Current browser closed
+20230618 17:51:56 INFO  [main] steps.SalesforceStepDef SalesforceStepDef.java277 - Chrome browser opened
+20230618 17:51:56 INFO  [main] steps.SalesforceStepDef SalesforceStepDef.java94 - Going to url https://login.salesforce.com/
+20230618 17:51:57 INFO  [main] steps.SalesforceStepDef SalesforceStepDef.java283 - https://login.salesforce.com/is entered
+20230618 17:51:57 INFO  [main] steps.SalesforceStepDef SalesforceStepDef.java505 - Pass: expected title 'Login | Salesforce' is displayed
+20230618 17:51:57 INFO  [main] base.BasePage BasePage.java90 - Pass: username field element cleared
+20230618 17:51:57 INFO  [main] base.BasePage BasePage.java75 - Pass: username field is entered
+20230618 17:51:58 INFO  [main] steps.SalesforceStepDef SalesforceStepDef.java257 - expectedUsername: jprabhu.27@gmail.com
+20230618 17:51:58 INFO  [main] steps.SalesforceStepDef SalesforceStepDef.java258 - actualUsername: jprabhu.27@gmail.com
+20230618 17:51:58 INFO  [main] base.BasePage BasePage.java90 - Pass: password field element cleared
+20230618 17:51:58 INFO  [main] steps.SalesforceStepDef SalesforceStepDef.java167 - Password field is empty
+20230618 17:51:58 INFO  [main] base.BasePage BasePage.java129 - Pass: login button element clicked
+20230618 17:51:58 INFO  [main] steps.SalesforceStepDef SalesforceStepDef.java177 - Expected error message is displayed: Please enter your password.
+20230618 17:51:59 INFO  [main] steps.SalesforceStepDef SalesforceStepDef.java288 - Current browser closed
+20230618 17:52:00 INFO  [main] steps.SalesforceStepDef SalesforceStepDef.java277 - Chrome browser opened
+20230618 17:52:00 INFO  [main] steps.SalesforceStepDef SalesforceStepDef.java94 - Going to url https://login.salesforce.com/
+20230618 17:52:02 INFO  [main] steps.SalesforceStepDef SalesforceStepDef.java283 - https://login.salesforce.com/is entered
+20230618 17:52:02 INFO  [main] steps.SalesforceStepDef SalesforceStepDef.java505 - Pass: expected title 'Login | Salesforce' is displayed
+20230618 17:52:02 INFO  [main] base.BasePage BasePage.java90 - Pass: username field element cleared
+20230618 17:52:02 INFO  [main] base.BasePage BasePage.java75 - Pass: username field is entered
+20230618 17:52:02 INFO  [main] base.BasePage BasePage.java90 - Pass: password field element cleared
+20230618 17:52:02 INFO  [main] base.BasePage BasePage.java75 - Pass: password field is entered
+20230618 17:52:08 INFO  [main] base.BasePage BasePage.java129 - Pass: login button element clicked
+20230618 17:52:08 INFO  [main] steps.SalesforceStepDef SalesforceStepDef.java505 - Pass: expected title 'Home Page ~ Salesforce - Developer Edition' is displayed
+20230618 17:52:08 INFO  [main] steps.SalesforceStepDef SalesforceStepDef.java288 - Current browser closed
+20230618 17:52:10 INFO  [main] steps.SalesforceStepDef SalesforceStepDef.java277 - Chrome browser opened
+20230618 17:52:10 INFO  [main] steps.SalesforceStepDef SalesforceStepDef.java94 - Going to url https://login.salesforce.com/
+20230618 17:52:10 INFO  [main] steps.SalesforceStepDef SalesforceStepDef.java283 - https://login.salesforce.com/is entered
+20230618 17:52:10 INFO  [main] steps.SalesforceStepDef SalesforceStepDef.java505 - Pass: expected title 'Login | Salesforce' is displayed
+20230618 17:52:11 INFO  [main] base.BasePage BasePage.java90 - Pass: username field element cleared
+20230618 17:52:11 INFO  [main] base.BasePage BasePage.java75 - Pass: username field is entered
+20230618 17:52:11 INFO  [main] base.BasePage BasePage.java90 - Pass: password field element cleared
+20230618 17:52:11 INFO  [main] base.BasePage BasePage.java75 - Pass: password field is entered
+20230618 17:52:11 INFO  [main] steps.SalesforceStepDef SalesforceStepDef.java319 - Remember Me checkbox is checked
+20230618 17:52:12 INFO  [main] base.BasePage BasePage.java129 - Pass: login button element clicked
+20230618 17:52:17 INFO  [main] steps.SalesforceStepDef SalesforceStepDef.java505 - Pass: expected title 'Home Page ~ Salesforce - Developer Edition' is displayed
+20230618 17:52:17 INFO  [main] base.BasePage BasePage.java129 - Pass: Username dropdown element clicked
+20230618 17:52:17 INFO  [main] base.BasePage BasePage.java129 - Pass: Logout Button element clicked
+20230618 17:52:20 INFO  [main] steps.SalesforceStepDef SalesforceStepDef.java505 - Pass: expected title 'Login | Salesforce' is displayed
+20230618 17:52:20 INFO  [main] steps.SalesforceStepDef SalesforceStepDef.java257 - expectedUsername: jprabhu.27@gmail.com
+20230618 17:52:20 INFO  [main] steps.SalesforceStepDef SalesforceStepDef.java258 - actualUsername: jprabhu.27@gmail.com
+20230618 17:52:20 INFO  [main] steps.SalesforceStepDef SalesforceStepDef.java288 - Current browser closed
+20230618 17:52:21 INFO  [main] steps.SalesforceStepDef SalesforceStepDef.java277 - Chrome browser opened
+20230618 17:52:21 INFO  [main] steps.SalesforceStepDef SalesforceStepDef.java94 - Going to url https://login.salesforce.com/
+20230618 17:52:22 INFO  [main] steps.SalesforceStepDef SalesforceStepDef.java283 - https://login.salesforce.com/is entered
+20230618 17:52:22 INFO  [main] base.BasePage BasePage.java90 - Pass: username field element cleared
+20230618 17:52:22 INFO  [main] base.BasePage BasePage.java75 - Pass: username field is entered
+20230618 17:52:23 INFO  [main] base.BasePage BasePage.java90 - Pass: password field element cleared
+20230618 17:52:23 INFO  [main] base.BasePage BasePage.java75 - Pass: password field is entered
+20230618 17:52:23 INFO  [main] base.BasePage BasePage.java129 - Pass: login button element clicked
+20230618 17:52:29 INFO  [main] steps.SalesforceStepDef SalesforceStepDef.java505 - Pass: expected title 'Home Page ~ Salesforce - Developer Edition' is displayed
+20230618 17:52:29 INFO  [main] base.BasePage BasePage.java129 - Pass: Username dropdown element clicked
+20230618 17:52:29 INFO  [main] steps.SalesforceStepDef SalesforceStepDef.java227 - Username dropdown options match the expected list.
+20230618 17:52:29 INFO  [main] steps.SalesforceStepDef SalesforceStepDef.java288 - Current browser closed
+20230618 17:52:30 INFO  [main] steps.SalesforceStepDef SalesforceStepDef.java277 - Chrome browser opened
+20230618 17:52:30 INFO  [main] steps.SalesforceStepDef SalesforceStepDef.java94 - Going to url https://login.salesforce.com/
+20230618 17:52:31 INFO  [main] steps.SalesforceStepDef SalesforceStepDef.java283 - https://login.salesforce.com/is entered
+20230618 17:52:31 INFO  [main] base.BasePage BasePage.java90 - Pass: username field element cleared
+20230618 17:52:31 INFO  [main] base.BasePage BasePage.java75 - Pass: username field is entered
+20230618 17:52:32 INFO  [main] base.BasePage BasePage.java90 - Pass: password field element cleared
+20230618 17:52:32 INFO  [main] base.BasePage BasePage.java75 - Pass: password field is entered
+20230618 17:52:32 INFO  [main] base.BasePage BasePage.java129 - Pass: login button element clicked
+20230618 17:52:37 INFO  [main] base.BasePage BasePage.java129 - Pass: Username dropdown element clicked
+20230618 17:52:37 INFO  [main] steps.SalesforceStepDef SalesforceStepDef.java227 - Username dropdown options match the expected list.
+20230618 17:52:37 INFO  [main] base.BasePage BasePage.java129 - Pass: Logout Button element clicked
+20230618 17:52:39 INFO  [main] steps.SalesforceStepDef SalesforceStepDef.java505 - Pass: expected title 'Login | Salesforce' is displayed
+20230618 17:52:40 INFO  [main] steps.SalesforceStepDef SalesforceStepDef.java288 - Current browser closed

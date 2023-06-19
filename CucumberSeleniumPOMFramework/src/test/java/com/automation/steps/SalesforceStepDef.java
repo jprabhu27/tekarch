@@ -80,11 +80,11 @@ public class SalesforceStepDef {
 		//System.out.println("After each step executed");
 		
 		//To take screenshot
-//		if((sc.isFailed())) {
-//		File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-//		byte[]fileContent = FileUtils.readFileToByteArray(screenshot);
-//		sc.attach(fileContent, "image/png", "screenshot");
-//		}
+		if((sc.isFailed())) {
+		File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+		byte[]fileContent = FileUtils.readFileToByteArray(screenshot);
+		sc.attach(fileContent, "image/png", "screenshot");
+		}
 		
 	}
 
