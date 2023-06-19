@@ -293,8 +293,8 @@ public class BasePage {
 		public void waitFluentForVisibility(WebElement ele, String obName) {
 			
 			Wait<WebDriver> wait = new FluentWait<WebDriver>(driver)
-					.withTimeout(Duration.ofSeconds(30))
-					.pollingEvery(Duration.ofSeconds(30))
+					.withTimeout(Duration.ofSeconds(5))
+					.pollingEvery(Duration.ofSeconds(5))
 					.ignoring(NoSuchElementException.class);
 			wait.until(ExpectedConditions.visibilityOf(ele));
 			}

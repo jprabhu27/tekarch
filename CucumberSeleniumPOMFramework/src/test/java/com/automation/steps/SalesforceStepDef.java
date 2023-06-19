@@ -76,8 +76,9 @@ public class SalesforceStepDef {
 	
 	@AfterStep
 	public void after_each_step(Scenario sc) throws IOException {
-		sc.log("After step executed");
-		System.out.println("After each step executed");
+		//sc.log("After step executed");
+		//System.out.println("After each step executed");
+		
 		//To take screenshot
 //		if((sc.isFailed())) {
 //		File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
@@ -152,8 +153,36 @@ public class SalesforceStepDef {
 		loginPage.enterUsername(getProperty("username"));
 	}
 	
+	@When("user clears password")
+	public void user_clears_password() {
+		loginPage.clearPassword();
+	}
+	
+	@Then("password field is empty")
+	public void password_field_empty() {
+		String expectedValue = "";
+		String actualValue = loginPage.getPassword();
+		
+		if (actualValue.equals(actualValue))
+			log.info("Password field is empty");
+		
+		Assert.assertEquals(actualValue, expectedValue);
+	}
+	
+	@Then("error message {string} is displayed")
+	public void error_message_is_displayed(String expectedMessage) {
+		String actualMessage = loginPage.getErrorMessage();
+		
+		if (actualMessage.equals(expectedMessage))
+			log.info("Expected error message is displayed: " + expectedMessage);
+		else
+			log.info("Expected error message is '" + expectedMessage + "' is not displayed, instead it displays: " + actualMessage);
+		
+		Assert.assertEquals(actualMessage, expectedMessage);
+	}
+	
 	@When("user enters password")
-	public void user_enters_property() {
+	public void user_enters_password() {
 		loginPage.enterPassword(getProperty("password"));
 	}
 	
@@ -201,6 +230,33 @@ public class SalesforceStepDef {
 		}
 
 		Assert.assertTrue(actualList.equals(expectedList));
+	}
+	
+	@When ("user checks the remember me checkbox")
+	public void user_checks_the_remeber_me_checkbox(){
+	
+		checkRememberMeBoxById("rememberUn");
+		
+	}
+		
+	@When("user clicks {string} menu")
+	public void user_clicks_menu(String menuText) {
+		if (menuText.equalsIgnoreCase("My Profile"))
+			driver = homePage.clickMyProfile();
+		else if (menuText.equalsIgnoreCase("My Settings"))
+			driver = homePage.clickMySettings();
+		else if (menuText.equalsIgnoreCase("Logout"))
+			driver = homePage.logoutButton();
+	}
+	
+	@Then("username is displayed")
+	public void username_is_displayed() {
+		String expectedUsername = getProperty("username");
+		String actualUsername = loginPage.getUsername();
+		
+		log.info("expectedUsername: " + expectedUsername);
+		log.info("actualUsername: " + actualUsername);
+		Assert.assertEquals(actualUsername, expectedUsername);
 	}
 	
 	public void launchBrowser(String browserName) {

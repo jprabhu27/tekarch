@@ -6,7 +6,7 @@
       <class name="com.automation.runners.SalesforceRunner">
         <methods>
           <include name="setUpClass"/>
-          <include name="runScenario" invocation-numbers="1"/>
+          <include name="runScenario" invocation-numbers="4"/>
           <include name="tearDownClass"/>
         </methods>
       </class> <!-- com.automation.runners.SalesforceRunner -->

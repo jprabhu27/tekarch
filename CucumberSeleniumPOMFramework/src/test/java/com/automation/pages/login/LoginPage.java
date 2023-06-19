@@ -45,7 +45,12 @@ public class LoginPage extends BasePage {
 	
 	public String getUsername()
 	{
-		return getValueFromWebElement(userNameElement, "username field");	
+		//return getValueFromWebElement(userNameElement, "username field");	
+		return userNameElement.getAttribute("value");
+	}
+	
+	public String getPassword() {
+		return passwordElement.getAttribute("value");
 	}
 	
 	public void enterUsername(String usernamedata) {
@@ -84,7 +89,7 @@ public class LoginPage extends BasePage {
 
 	public String getErrorMessage()
 	{
-		waitFluentForVisibility(errorDiv, "error message");
+		//waitFluentForVisibility(errorDiv, "error message");
 		return errorDiv.getText();
 	}
 	
