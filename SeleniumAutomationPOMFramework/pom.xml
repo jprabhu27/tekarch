@@ -58,8 +58,7 @@
 
 		<!-- https://mvnrepository.com/artifact/org.testng/testng -->
 		<dependency>
-			<groupId>
-				org.testng</groupId>
+			<groupId>org.testng</groupId>
 			<artifactId>testng</artifactId>
 			<version>7.7.1</version>
 			<scope>test</scope>
@@ -68,8 +67,7 @@
 		<!--
 		https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core -->
 		<dependency>
-			<groupId>
-				org.apache.logging.log4j</groupId>
+			<groupId>org.apache.logging.log4j</groupId>
 			<artifactId>log4j-core</artifactId>
 			<version>2.19.0</version>
 		</dependency>
@@ -78,16 +76,14 @@
 		<!--
 		https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-api -->
 		<dependency>
-			<groupId>
-				org.apache.logging.log4j</groupId>
+			<groupId>org.apache.logging.log4j</groupId>
 			<artifactId>log4j-api</artifactId>
 			<version>2.19.0</version>
 		</dependency>
 
 
 		<dependency>
-			<groupId>
-				com.tests</groupId>
+			<groupId>com.tests</groupId>
 			<artifactId>seleniumproject</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>

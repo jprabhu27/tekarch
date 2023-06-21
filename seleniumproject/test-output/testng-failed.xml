@@ -3,11 +3,12 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.firebase.tests.SalesForceAutomation2">
+      <class name="com.firebase.tests.SalesForceAutomation3TestNG">
         <methods>
           <include name="login_to_salesforce_2_testcase"/>
+          <include name="launchBrowser"/>
         </methods>
-      </class> <!-- com.firebase.tests.SalesForceAutomation2 -->
+      </class> <!-- com.firebase.tests.SalesForceAutomation3TestNG -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

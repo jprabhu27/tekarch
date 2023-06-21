@@ -6,9 +6,9 @@
       <class name="com.automation.tests.AutomationScripts">
         <methods>
           <include name="setUpForBeforeTest"/>
+          <include name="testcase01_login_error_message"/>
           <include name="setUpBeforeTestMethod"/>
           <include name="tearDownAfterTestMethod"/>
-          <include name="login_to_salesforce_testscript"/>
         </methods>
       </class> <!-- com.automation.tests.AutomationScripts -->
     </classes>

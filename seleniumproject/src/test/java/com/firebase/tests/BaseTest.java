@@ -36,7 +36,7 @@ public class BaseTest {
 		log = LogManager.getLogger(BaseTest.class.getName());
 		}
 	
-//@BeforeMethod
+@BeforeMethod
 	public static void launchBrowser(String browserName) {
 
 		switch (browserName) {
@@ -176,31 +176,31 @@ public class BaseTest {
 
 	}
 	
-//	public void enterText(WebElement element, String data, String objectName) {
-//		
-//		if(element.isDisplayed()) {
-//			clearElement(element,objectName);
-//			element.sendKeys(data);
-//			System.out.println("Pass:" +objectName  +" is entered to the username field");
-//		}
-//		else {
-//			System.out.println("Fail: "+objectName+ "element is not displayed");
-//		}
-//		
-//	}
-//
-//	public void clearElement(WebElement element, String objName) {
-//		
-//		if(element.isDisplayed()) {
-//			element.clear();
-//			System.out.println("pass: " +objName + " element cleared");
-//		}else {
-//			
-//			System.out.println("fail: " +objName + "element not displayed");
-//		}
-//		
-//	}
-//	
+	public void enterText(WebElement element, String data, String objectName) {
+		
+		if(element.isDisplayed()) {
+			clearElement(element,objectName);
+			element.sendKeys(data);
+			System.out.println("Pass:" +objectName  +" is entered to the username field");
+		}
+		else {
+			System.out.println("Fail: "+objectName+ "element is not displayed");
+		}
+		
+	}
+
+	public void clearElement(WebElement element, String objName) {
+		
+		if(element.isDisplayed()) {
+			element.clear();
+			System.out.println("pass: " +objName + " element cleared");
+		}else {
+			
+			System.out.println("fail: " +objName + "element not displayed");
+		}
+		
+	}
+	
 	public void clickElement(WebElement element, String objName) {
 		
 		if(element.isDisplayed()) {
@@ -211,34 +211,34 @@ public class BaseTest {
 			System.out.println("fail: " +objName + "element not displayed");
 		}
 	}
-//	
-//	public void goToUrl(String url) {
-//		driver.get(url);
-//		System.out.println(url + "is entered");
-//	}
-//	
-//	public void closeBrowser() {
-//		driver.close();
-//		System.out.println("Current browser closed");
-//		
-//	}
-//	
-//	public String getPageTitle() {
-//		return driver.getTitle();
-//	}
-//	
-//	public void refreshPage() {
-//		driver.navigate().refresh();
-//	}
-//	
-//	public String getTextFromWebElement(WebElement element, String name) {
-//		if (element.isDisplayed()) {
-//			return element.getText();
-//		}else {
-//			System.out.println(name + "Web Element is not displayed");
-//			return null;
-//		}
-//	}
+	
+	public void goToUrl(String url) {
+		driver.get(url);
+		System.out.println(url + "is entered");
+	}
+	
+	public void closeBrowser() {
+		driver.close();
+		System.out.println("Current browser closed");
+		
+	}
+	
+	public String getPageTitle() {
+		return driver.getTitle();
+	}
+	
+	public void refreshPage() {
+		driver.navigate().refresh();
+	}
+	
+	public String getTextFromWebElement(WebElement element, String name) {
+		if (element.isDisplayed()) {
+			return element.getText();
+		}else {
+			System.out.println(name + "Web Element is not displayed");
+			return null;
+		}
+	}
 //	public static void alertMessage(String errorMsg) {
 //		
 //		if (errorMsg.equals(expectedError)) {

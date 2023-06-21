@@ -9,7 +9,7 @@
     <classes>
       <class name="com.automation.tests.AutomationScripts">
         <methods>
-          <include name="testcase10_create_account"/>
+          <include name="testcase07_mySettings"/>
           <include name="setUpForBeforeTest"/>
           <include name="setUpBeforeTestMethod"/>
           <include name="tearDownAfterTestMethod"/>

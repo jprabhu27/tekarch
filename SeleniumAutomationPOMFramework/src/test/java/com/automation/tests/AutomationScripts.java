@@ -30,6 +30,10 @@ import com.automation.pages.accounts.*;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
+// ==========================================================================
+// *** IMPORTANT: Right click on testng.xml, then click Run As/Test NG Suite ***
+// *** YOU WILL GET ERRORS OTHERWISE
+//==========================================================================
 public class AutomationScripts extends BaseTest {
 
 	@Test(enabled = false)
@@ -106,7 +110,10 @@ public class AutomationScripts extends BaseTest {
 
 	}
 	
-	@Test(enabled = false)
+	
+	// Before running test ensure "Reports" tab is not in selected tabs list
+	// for "Sales force Chatter" app
+	@Test(enabled = true)
 	public void testcase07_mySettings() {
 		
 		addInsideMethodLog();
@@ -151,7 +158,7 @@ public class AutomationScripts extends BaseTest {
 		assertEqualsWithReportLog(actualTitle, expectedTitle, "Login page is displayed");
 	}
 
-	@Test(enabled = true)
+	@Test(enabled = false)
 	public void testcase10_create_account() {
 		
 		addInsideMethodLog();

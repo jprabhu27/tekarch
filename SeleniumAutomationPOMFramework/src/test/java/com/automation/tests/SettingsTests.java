@@ -50,14 +50,23 @@ public class SettingsTests extends BaseTest{
 				
 		 Select salesforceChatter = new Select(driver.findElement(By.xpath("//*[@id = 'p4']")));
 		 //selectByIndexData(salesforceChatter, 8,"Sales Force Chatter");
-		 salesforceChatter.selectByIndex(8);
+		// salesforceChatter.selectByIndex(8);
+		 salesforceChatter.selectByVisibleText("Salesforce Chatter");
 		 
 		 Select reports= new Select(driver.findElement(By.xpath("//*[@id = 'duel_select_0']")));
 		 //selectByIndexData(reports, 77,"Reports");
-		 reports.selectByIndex(77);
+		 //reports.selectByIndex(77);
+		 reports.selectByVisibleText("Reports");
 			
 		 settingsPage.clickAddButton();
+		 
+		 // TO DO:??? Iterate thru Selected Tabs to confirm it has "Reports" item
+		 // Assert on that
 		 settingsPage.clickSaveButton();
+		 
+		 // After save...Top right, change app from "Content" to "Salesforce Chatter"
+		 // The confirm if Report menu exists there
+		 
 		 
 		 settingsPage.clickEmailNameLink();
 		 

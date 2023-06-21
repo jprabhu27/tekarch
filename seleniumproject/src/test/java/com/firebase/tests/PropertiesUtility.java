@@ -19,7 +19,8 @@ public class PropertiesUtility {
             properties.load(input);				//The properties file is loaded into the props object using the load()method
             									//of Properties.
 		
-		} catch (IOException e) {
+		} 
+		catch (IOException e) {
 	        e.printStackTrace();
 	    } finally {
 	        // Close the input stream

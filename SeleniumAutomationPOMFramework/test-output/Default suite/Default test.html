@@ -57,9 +57,9 @@ function toggleAllBoxes() {
 <tr>
 <td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Sun Jun 11 02:14:24 PDT 2023</td>
+<td>Started on:</td><td>Tue Jun 20 22:08:45 PDT 2023</td>
 </tr>
-<tr><td>Total time:</td><td>6 seconds (6328 ms)</td>
+<tr><td>Total time:</td><td>4 seconds (4324 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -76,12 +76,14 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.automation.tests.AutomationScripts.login_to_salesforce_testscript()'><b>login_to_salesforce_testscript</b><br>Test class: com.automation.tests.AutomationScripts</td>
+<td title='com.automation.tests.AutomationScripts.testcase01_login_error_message()'><b>testcase01_login_error_message</b><br>Test class: com.automation.tests.AutomationScripts</td>
 <td><div><pre>java.lang.NullPointerException: Cannot invoke &quot;com.aventstack.extentreports.ExtentTest.log(com.aventstack.extentreports.Status, String)&quot; because &quot;com.automation.utility.ExtentReportsUtility.testLogger&quot; is null
-	at com.automation.utility.ExtentReportsUtility.logTestInfo(ExtentReportsUtility.java:64)
-	at com.automation.pages.base.BasePage.enterText(BasePage.java:74)
-	at com.automation.pages.login.LoginPage.enterUsername(LoginPage.java:211)
-	at com.automation.tests.AutomationScripts.login_to_salesforce_testscript(AutomationScripts.java:51)
+	at com.automation.utility.ExtentReportsUtility.logTestInfo(ExtentReportsUtility.java:67)
+	at com.automation.pages.base.BasePage.clearElement(BasePage.java:91)
+	at com.automation.pages.base.BasePage.enterText(BasePage.java:71)
+	at com.automation.pages.login.LoginPage.enterUsername(LoginPage.java:53)
+	at com.automation.tests.LoginTests.login_without_password(LoginTests.java:27)
+	at com.automation.tests.AutomationScripts.testcase01_login_error_message(AutomationScripts.java:40)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -110,12 +112,14 @@ function toggleAllBoxes() {
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div><a href='#' onClick='toggleBox("stack-trace1753645864", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1753645864'><pre>java.lang.NullPointerException: Cannot invoke &quot;com.aventstack.extentreports.ExtentTest.log(com.aventstack.extentreports.Status, String)&quot; because &quot;com.automation.utility.ExtentReportsUtility.testLogger&quot; is null
-	at com.automation.utility.ExtentReportsUtility.logTestInfo(ExtentReportsUtility.java:64)
-	at com.automation.pages.base.BasePage.enterText(BasePage.java:74)
-	at com.automation.pages.login.LoginPage.enterUsername(LoginPage.java:211)
-	at com.automation.tests.AutomationScripts.login_to_salesforce_testscript(AutomationScripts.java:51)
+</pre></div><a href='#' onClick='toggleBox("stack-trace2022562847", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace2022562847'><pre>java.lang.NullPointerException: Cannot invoke &quot;com.aventstack.extentreports.ExtentTest.log(com.aventstack.extentreports.Status, String)&quot; because &quot;com.automation.utility.ExtentReportsUtility.testLogger&quot; is null
+	at com.automation.utility.ExtentReportsUtility.logTestInfo(ExtentReportsUtility.java:67)
+	at com.automation.pages.base.BasePage.clearElement(BasePage.java:91)
+	at com.automation.pages.base.BasePage.enterText(BasePage.java:71)
+	at com.automation.pages.login.LoginPage.enterUsername(LoginPage.java:53)
+	at com.automation.tests.LoginTests.login_without_password(LoginTests.java:27)
+	at com.automation.tests.AutomationScripts.testcase01_login_error_message(AutomationScripts.java:40)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -146,7 +150,7 @@ function toggleAllBoxes() {
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 </pre></div></td>
 <td>0</td>
-<td>com.automation.tests.AutomationScripts@1040be71</td></tr>
+<td>com.automation.tests.AutomationScripts@4d1bf319</td></tr>
 </table><p>
 </body>
 </html>

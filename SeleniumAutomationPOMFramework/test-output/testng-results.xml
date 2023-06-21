@@ -2,16 +2,16 @@
 <testng-results ignored="10" total="11" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-06-14T01:23:47 PDT" name="Suite" finished-at="2023-06-14T01:24:06 PDT" duration-ms="18817">
+  <suite started-at="2023-06-20T22:47:58 PDT" name="Suite" finished-at="2023-06-20T22:48:30 PDT" duration-ms="32311">
     <groups>
     </groups>
-    <test started-at="2023-06-14T01:23:47 PDT" name="chromeTest" finished-at="2023-06-14T01:24:06 PDT" duration-ms="18817">
+    <test started-at="2023-06-20T22:47:58 PDT" name="chromeTest" finished-at="2023-06-20T22:48:30 PDT" duration-ms="32311">
       <class name="com.automation.tests.AutomationScripts">
-        <test-method is-config="true" signature="setUpForBeforeTest()[pri:0, instance:com.automation.tests.AutomationScripts@5f049ea1]" started-at="2023-06-14T01:23:47 PDT" name="setUpForBeforeTest" finished-at="2023-06-14T01:23:48 PDT" duration-ms="651" status="PASS">
+        <test-method is-config="true" signature="setUpForBeforeTest()[pri:0, instance:com.automation.tests.AutomationScripts@5f049ea1]" started-at="2023-06-20T22:47:58 PDT" name="setUpForBeforeTest" finished-at="2023-06-20T22:47:59 PDT" duration-ms="499" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpForBeforeTest -->
-        <test-method is-config="true" signature="setUpBeforeTestMethod(java.lang.String)[pri:0, instance:com.automation.tests.AutomationScripts@5f049ea1]" started-at="2023-06-14T01:23:48 PDT" name="setUpBeforeTestMethod" finished-at="2023-06-14T01:23:52 PDT" duration-ms="4404" status="PASS">
+        <test-method is-config="true" signature="setUpBeforeTestMethod(java.lang.String)[pri:0, instance:com.automation.tests.AutomationScripts@5f049ea1]" started-at="2023-06-20T22:47:59 PDT" name="setUpBeforeTestMethod" finished-at="2023-06-20T22:48:02 PDT" duration-ms="3219" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -22,11 +22,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpBeforeTestMethod -->
-        <test-method signature="testcase10_create_account()[pri:0, instance:com.automation.tests.AutomationScripts@5f049ea1]" started-at="2023-06-14T01:23:52 PDT" name="testcase10_create_account" finished-at="2023-06-14T01:24:06 PDT" duration-ms="13228" status="PASS">
+        <test-method signature="testcase07_mySettings()[pri:0, instance:com.automation.tests.AutomationScripts@5f049ea1]" started-at="2023-06-20T22:48:02 PDT" name="testcase07_mySettings" finished-at="2023-06-20T22:48:30 PDT" duration-ms="27986" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testcase10_create_account -->
-        <test-method is-config="true" signature="tearDownAfterTestMethod()[pri:0, instance:com.automation.tests.AutomationScripts@5f049ea1]" started-at="2023-06-14T01:24:06 PDT" name="tearDownAfterTestMethod" finished-at="2023-06-14T01:24:06 PDT" duration-ms="179" status="PASS">
+        </test-method> <!-- testcase07_mySettings -->
+        <test-method is-config="true" signature="tearDownAfterTestMethod()[pri:0, instance:com.automation.tests.AutomationScripts@5f049ea1]" started-at="2023-06-20T22:48:30 PDT" name="tearDownAfterTestMethod" finished-at="2023-06-20T22:48:30 PDT" duration-ms="263" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownAfterTestMethod -->
