@@ -19,6 +19,7 @@ public class TekarchApiGetAllUsers {
 	
 	String extractedToken=null;
 	
+	
 	@BeforeClass
 	public void init() {
 		
@@ -35,7 +36,7 @@ public class TekarchApiGetAllUsers {
 			
 		Response res = RestAssured.given()
 				
-			.log().all()	
+		.log().all()	
 		.contentType(ContentType.JSON)
 		.body(data)//(serialization) jackson is internally converting this POJO object into actual JSON format
 		.when()

@@ -72,6 +72,7 @@ public class TekarchApiLogin {
 		
 		res.prettyPrint();
 		
+		
 		//find the total number of records
 		
 		int totalRecords = res.body().jsonPath().get("size()");

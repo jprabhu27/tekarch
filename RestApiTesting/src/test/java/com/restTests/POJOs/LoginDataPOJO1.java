@@ -21,8 +21,10 @@ public class LoginDataPOJO1 {
 
 @JsonProperty("username")
 private String username;
+
 @JsonProperty("password")
 private String password;
+
 @JsonIgnore
 private Map<String, Object> additionalProperties = new LinkedHashMap<String, Object>();
 

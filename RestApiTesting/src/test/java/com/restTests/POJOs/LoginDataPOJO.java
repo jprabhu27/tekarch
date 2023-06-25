@@ -5,6 +5,7 @@ public class LoginDataPOJO {
 	private String username;
 	private String password;
 	
+
 	//Using Generate Getters and Setters
 	
 	public String getUsername() {
