@@ -55,8 +55,9 @@ public class UserServiceHelper {
 		List<UserPOJO> list = Arrays.asList(userArray);
 
 		response.then().statusCode(200);
-
-		System.out.println("Number of records =" + response.jsonPath().get("$.size()"));
+		
+		System.out.println("Number of records (jsonPath) =" + response.jsonPath().get("$.size()"));
+		System.out.println("Number of records (array length)=" + userArray.length);
 		return list;
 	}
 
@@ -65,7 +66,8 @@ public class UserServiceHelper {
 			getToken();
 		}
 		Header header = new Header("token", token);
-		AddUserPOJO user = ReusableMethods.getUserDataToAdd();
+		AddUserPOJO user = ReusableMethods.getTestUser();
+		System.out.println("Adding user: " + user.getAccountno());
 		response = RestAssured.given().contentType("application/json").header(header).body(user).when()
 				.post(Endpoints.ADD_DATA);
 
@@ -82,10 +84,12 @@ public class UserServiceHelper {
 		UserPOJO updateUser = new UserPOJO();
 		List<UserPOJO> listOfUsers = getUserData();
 		for (UserPOJO userToBeUpdated : listOfUsers) {
-			if (userToBeUpdated.getAccountno().equals(ReusableMethods.getUserData().getAccountno())) {
+			if (userToBeUpdated.getAccountno().equals(ReusableMethods.getTestUser().getAccountno())) {
 				updateUser = userToBeUpdated;
 				updateUser.setDepartmentno("5");
 				updateUser.setSalary("5000");
+				
+				System.out.println("Updating user: " + updateUser.getAccountno() + ", id: " + updateUser.getId());
 			}
 
 		}
@@ -105,8 +109,10 @@ public class UserServiceHelper {
 		UserPOJO deleteUser = new UserPOJO();
 		List<UserPOJO> listOfUsers = getUserData();
 		for (UserPOJO userToBeDeleted : listOfUsers) {
-			if (userToBeDeleted.getAccountno().equals(ReusableMethods.getUserData().getAccountno())) {
+			if (userToBeDeleted.getAccountno().equals(ReusableMethods.getTestUser().getAccountno())) {
 				deleteUser = userToBeDeleted;
+				
+				System.out.println("Deleting user: " + deleteUser.getAccountno() + ", id: " + deleteUser.getId());
 			}
 		}
 		
@@ -115,7 +121,10 @@ public class UserServiceHelper {
 		deleteUserPOJO.setUserid(deleteUser.getUserid());
 		
 		Header headers = new Header("token", token);
-		response = RestAssured.given().contentType("application/json").header(headers).body(deleteUserPOJO).when()
+		response = RestAssured.given()
+				.contentType("application/json")
+				.header(headers)
+				.body(deleteUserPOJO).when()
 				.delete(Endpoints.DELETE_DATA);
 
 		return response;

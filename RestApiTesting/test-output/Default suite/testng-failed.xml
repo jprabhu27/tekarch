@@ -3,13 +3,12 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.restTests.simpleTests.TekarchApiCreateUser">
+      <class name="com.restTests.tests.TekarchApiEndToEnd">
         <methods>
-          <include name="init"/>
-          <include name="loginToApi1"/>
-          <include name="CreateUser"/>
+          <include name="baseUri"/>
+          <include name="TC_003_addUserData"/>
         </methods>
-      </class> <!-- com.restTests.simpleTests.TekarchApiCreateUser -->
+      </class> <!-- com.restTests.tests.TekarchApiEndToEnd -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

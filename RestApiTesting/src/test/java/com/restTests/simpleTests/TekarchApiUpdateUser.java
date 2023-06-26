@@ -8,6 +8,7 @@ import org.testng.annotations.Test;
 
 import com.restTests.POJOs.AddUserPOJO;
 import com.restTests.POJOs.LoginDataPOJO;
+import com.restTests.POJOs.UpdateUserPOJO;
 import com.restTests.constants.Endpoints;
 
 import io.restassured.RestAssured;
@@ -55,23 +56,21 @@ public class TekarchApiUpdateUser {
 		}
 	
 	
-	@Test
+	@Test(dependsOnMethods = "loginToApi1")
 	public void updateUser() {
 		
 		System.out.println("inside getUserstoken =" +extractedToken);
 		Header ob = new Header("token", extractedToken);
 		System.out.println("inside getUserstoken =" +extractedToken);
 		
-		AddUserPOJO userdata = new AddUserPOJO();
+		UpdateUserPOJO userdata = new UpdateUserPOJO();
 				
 		userdata.setAccountno("JP-1234568");
 		userdata.setDepartmentno("3");
-		userdata.setSalary("4000");
+		userdata.setSalary("5000");
+		userdata.setPincode("95688");
 		
-				
-		//Header ob1 = new Header("token", extractedToken);
-		
-				
+					
 		Response res = RestAssured.given()
 				.contentType(ContentType.JSON)
 				.body(userdata)//(serialization) jackson is internally converting this POJO object into actual JSON format

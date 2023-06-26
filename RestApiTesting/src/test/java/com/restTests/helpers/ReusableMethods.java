@@ -10,21 +10,17 @@ public class ReusableMethods {
 	
 	public static AddUserPOJO user;
 	
-	public static AddUserPOJO getUserDataToAdd() {
-		user = new AddUserPOJO();
-		
-		user.setAccountno("JP-1234569");
-		user.setDepartmentno("2");
-		user.setSalary("4000");
-		user.setPincode("95688");
-				
+	public static AddUserPOJO getTestUser() {
+		if (user == null) {
+			user = new AddUserPOJO();
+			
+			user.setAccountno("JP-1234578");
+			user.setDepartmentno("2");
+			user.setSalary("4000");
+			user.setPincode("95688");
+		}
 		return user;
 	}
-	
-	public static AddUserPOJO getUserData() {
-		return user;
-	}
-	
 	
 	public int getStatusCode(Response response) {
 		

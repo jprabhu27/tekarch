@@ -34,7 +34,7 @@ public class TekarchApiEndToEnd extends UserServiceHelper {
 		
 	}
 	
-	@Test(priority =1, enabled = false)
+	@Test(priority =1, enabled = true)
 	public static void TC_001_validLogin()
 	{
 		
@@ -42,24 +42,24 @@ public class TekarchApiEndToEnd extends UserServiceHelper {
 		System.out.println("Token *********** =" +token);
 	}
 	
-	@Test(priority =2, enabled = false)
+	@Test(priority =2, enabled = true)
 	public static void TC_002_getUserData() {
 		//Return list of users
 		List<UserPOJO> listOfUsers = getUserData();
 		System.out.println("First account number = "+listOfUsers.get(0).getAccountno());
 	}
 		
-	@Test(priority =3, enabled = false)
+	@Test(priority =3, enabled = true)
 	public static void TC_003_addUserData()throws IOException {
 	
 		
 		Response res= addUserData();
-		ReusableMethods.verifyStatusCodeis(res, 200);
+		ReusableMethods.verifyStatusCodeis(res, 201); // New creation success is 201 - Created
 		String status = ReusableMethods.getJsonPathData(res,"status");
 		Assert.assertEquals(status, "success");
 	}
 	
-	@Test(priority =4, enabled = false)
+	@Test(priority =4, enabled = true)
 	public static void TC_004_updateUserData()throws IOException{
 	
 		Response response = updateUserData();
@@ -69,7 +69,7 @@ public class TekarchApiEndToEnd extends UserServiceHelper {
 		Assert.assertEquals(status, "success");
 	}
 		
-	@Test(priority =5, enabled = false)
+	@Test(priority =5, enabled = true)
 	public static void TC_005_deleteUserData()throws IOException{
 		
 		Response response = deleteUserData();

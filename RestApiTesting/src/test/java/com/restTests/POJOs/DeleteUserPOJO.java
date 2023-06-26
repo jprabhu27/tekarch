@@ -1,6 +1,8 @@
 package com.restTests.POJOs;
 
 public class DeleteUserPOJO {
+	private String userid;
+	private String id;
 	public String getUserid() {
 		return userid;
 	}
@@ -13,7 +15,5 @@ public class DeleteUserPOJO {
 	public void setId(String id) {
 		this.id = id;
 	}
-	private String userid;
-	private String id;
 	
 }
