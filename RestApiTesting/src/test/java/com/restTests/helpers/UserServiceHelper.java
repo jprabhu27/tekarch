@@ -30,7 +30,11 @@ public class UserServiceHelper {
 		ob.setUsername(username);
 		ob.setPassword(password);
 		
-		response = RestAssured.given().contentType("application/json").body(ob).when().post(Endpoints.LOGIN);
+		response = RestAssured.given()
+					.contentType("application/json")
+					.body(ob)
+					.when()
+					.post(Endpoints.LOGIN);
 
 		return response;
 
@@ -50,7 +54,10 @@ public class UserServiceHelper {
 		}
 		Header header = new Header("token", token);
 		System.out.println("User data token =======" + token);
-		response = RestAssured.given().header(header).when().get(Endpoints.GET_DATA);
+		response = RestAssured.given()
+				.header(header)
+				.when()
+				.get(Endpoints.GET_DATA);
 		UserPOJO[] userArray = response.as(UserPOJO[].class);
 		List<UserPOJO> list = Arrays.asList(userArray);
 
@@ -68,7 +75,11 @@ public class UserServiceHelper {
 		Header header = new Header("token", token);
 		AddUserPOJO user = ReusableMethods.getTestUser();
 		System.out.println("Adding user: " + user.getAccountno());
-		response = RestAssured.given().contentType("application/json").header(header).body(user).when()
+		response = RestAssured.given()
+				.contentType("application/json")
+				.header(header)
+				.body(user)
+				.when()
 				.post(Endpoints.ADD_DATA);
 
 		return response;
@@ -95,7 +106,10 @@ public class UserServiceHelper {
 		}
 
 		Header headers = new Header("token", token);
-		response = RestAssured.given().contentType("application/json").header(headers).body(updateUser).when()
+		response = RestAssured.given()
+				.contentType("application/json")
+				.header(headers).body(updateUser)
+				.when()
 				.put(Endpoints.UPDATE_DATA);
 
 		return response;

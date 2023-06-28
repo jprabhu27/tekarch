@@ -7,6 +7,9 @@ import org.hamcrest.Matchers;
 import org.testng.annotations.Test;
 
 import com.restTests.POJOs.LoginDataPOJO;
+
+
+
 import org.hamcrest.Matcher;
 import org.hamcrest.MatcherAssert;
 
@@ -18,6 +21,7 @@ import io.restassured.response.Response;
 
 public class TekarchApiLogin {
 	String extractedToken = null;
+
 
 	@Test
 	public void loginToApi() {
@@ -40,7 +44,8 @@ public class TekarchApiLogin {
 
 		extractedToken = res.body().jsonPath().getString("[0].token");
 		System.out.println("token =" + extractedToken);
-
+		
+		
 	}
 
 	@Test(dependsOnMethods = "loginToApi1")

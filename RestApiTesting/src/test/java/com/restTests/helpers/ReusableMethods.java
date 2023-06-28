@@ -44,7 +44,7 @@ public class ReusableMethods {
 	}
 
 	public static String getJsonPathData(Response response, String path) {
-		// TODO Auto-generated method stub
+		
 		return response.jsonPath().getString(path);
 	}
 

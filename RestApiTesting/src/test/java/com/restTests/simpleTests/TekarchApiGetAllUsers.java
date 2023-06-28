@@ -29,6 +29,7 @@ public class TekarchApiGetAllUsers {
 	@Test
 	public void loginToApi1() {
 		
+		
 		LoginDataPOJO data = new LoginDataPOJO();
 		data.setUsername("jayaprabhu@hotmail.com");
 		data.setPassword("Tekarch@123");

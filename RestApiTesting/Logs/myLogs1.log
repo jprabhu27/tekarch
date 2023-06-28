@@ -1,0 +1,23 @@
+20230626 17:30:17 INFO  [main] tests.TekarchApiEndToEnd TekarchApiEndToEnd.java45 - *************Login****************
+20230626 17:30:20 INFO  [main] tests.TekarchApiEndToEnd TekarchApiEndToEnd.java56 - *************Reading User info****************
+20230626 17:30:41 INFO  [main] tests.TekarchApiEndToEnd TekarchApiEndToEnd.java65 - *************User info is displayed****************
+20230626 17:30:43 INFO  [main] tests.TekarchApiEndToEnd TekarchApiEndToEnd.java72 - *************User is Created****************
+20230626 17:30:43 INFO  [main] tests.TekarchApiEndToEnd TekarchApiEndToEnd.java78 - *************Updating User data****************
+20230626 17:30:59 INFO  [main] tests.TekarchApiEndToEnd TekarchApiEndToEnd.java86 - *************User updated****************
+20230626 17:30:59 INFO  [main] tests.TekarchApiEndToEnd TekarchApiEndToEnd.java92 - *************Delete User Data****************
+20230626 17:31:15 INFO  [main] tests.TekarchApiEndToEnd TekarchApiEndToEnd.java100 - *************User Deleted****************
+20230627 22:41:36 INFO  [main] tests.TekarchApiEndToEnd TekarchApiEndToEnd.java45 - *************Login****************
+20230627 22:41:41 INFO  [main] tests.TekarchApiEndToEnd TekarchApiEndToEnd.java56 - *************Reading User info****************
+20230627 22:41:49 INFO  [main] tests.TekarchApiEndToEnd TekarchApiEndToEnd.java65 - *************User info is displayed****************
+20230627 22:41:51 INFO  [main] tests.TekarchApiEndToEnd TekarchApiEndToEnd.java72 - *************User is Created****************
+20230627 22:41:51 INFO  [main] tests.TekarchApiEndToEnd TekarchApiEndToEnd.java78 - *************Updating User data****************
+20230627 22:42:27 INFO  [main] tests.TekarchApiEndToEnd TekarchApiEndToEnd.java86 - *************User updated****************
+20230627 22:42:27 INFO  [main] tests.TekarchApiEndToEnd TekarchApiEndToEnd.java92 - *************Delete User Data****************
+20230627 22:46:10 INFO  [main] tests.TekarchApiEndToEnd TekarchApiEndToEnd.java45 - *************Login****************
+20230627 22:46:13 INFO  [main] tests.TekarchApiEndToEnd TekarchApiEndToEnd.java56 - *************Reading User info****************
+20230627 22:46:20 INFO  [main] tests.TekarchApiEndToEnd TekarchApiEndToEnd.java65 - *************User info is displayed****************
+20230627 22:46:20 INFO  [main] tests.TekarchApiEndToEnd TekarchApiEndToEnd.java72 - *************User is Created****************
+20230627 22:46:20 INFO  [main] tests.TekarchApiEndToEnd TekarchApiEndToEnd.java78 - *************Updating User data****************
+20230627 22:46:36 INFO  [main] tests.TekarchApiEndToEnd TekarchApiEndToEnd.java86 - *************User updated****************
+20230627 22:46:36 INFO  [main] tests.TekarchApiEndToEnd TekarchApiEndToEnd.java92 - *************Delete User Data****************
+20230627 22:46:51 INFO  [main] tests.TekarchApiEndToEnd TekarchApiEndToEnd.java100 - *************User Deleted****************
