@@ -18,14 +18,12 @@ import com.restTests.helpers.ReusableMethods;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import com.restTests.helpers.UserServiceHelper;
+import com.restTests.simpleTests.CreateUser;
+import com.restTests.simpleTests.GetAllUsers;
+import com.restTests.simpleTests.Login;
 
 public class TekarchApiEndToEnd extends UserServiceHelper {
 	
-	//1st  login test-extract the token
-	//2nd Create user test
-	//3rd Immediately execute getAllUsers test--first record--extract the user id and id
-	//4th Update test
-	//5th Delete test
 	
 	public static Logger logger;  //for logs
 	
@@ -39,38 +37,34 @@ public class TekarchApiEndToEnd extends UserServiceHelper {
 		
 	}
 	
+	
 	@Test(priority =1, enabled = true)
 	public static void TC_001_validLogin()
 	{
-		logger.info("*************Login****************");
-		String token = getToken();
-		System.out.println("Token *********** =" +token);
-		
-		
-		
+		System.out.println("\n===============================================");
+		System.out.println("TC_001_validLogin");
+		Login.validateToken(logger);
+		System.out.println("===============================================\n");
 	}
+	
 	
 	@Test(priority =2, enabled = true)
 	public static void TC_002_getUserData() {
-		
-		logger.info("*************Reading User info****************");
-		//Return list of users
-		List<UserPOJO> listOfUsers = getUserData();
-		System.out.println("First account number = "+listOfUsers.get(0).getAccountno());
+		System.out.println("\n===============================================");
+		System.out.println("TC_002_getUserData");
+		GetAllUsers.getUserData(logger);
+		System.out.println("===============================================\n");
 	}
-		
+	
+	
 	@Test(priority =3, enabled = true)
 	public static void TC_003_addUserData()throws IOException {
-	
-		logger.info("*************User info is displayed****************");
-		
-		Response res= addUserData();
-		ReusableMethods.verifyStatusCodeis(res, 201); // New creation success is 201 - Created
-		String status = ReusableMethods.getJsonPathData(res,"status");
-		Assert.assertEquals(status, "success");
-		
-		logger.info("*************User is Created****************");
+		System.out.println("\n===============================================");
+		System.out.println("TC_003_addUserData");
+		CreateUser.addUser(logger);
+		System.out.println("===============================================\n");
 	}
+	
 	
 	@Test(priority =4, enabled = true)
 	public static void TC_004_updateUserData()throws IOException{
@@ -85,7 +79,8 @@ public class TekarchApiEndToEnd extends UserServiceHelper {
 		
 		logger.info("*************User updated****************");
 	}
-		
+	
+	
 	@Test(priority =5, enabled = true)
 	public static void TC_005_deleteUserData()throws IOException{
 		

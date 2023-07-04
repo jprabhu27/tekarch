@@ -1,9 +1,12 @@
 package com.restTests.simpleTests;
 
+import java.util.Collections;
 import java.util.List;
+import java.util.ArrayList;
 
 import org.hamcrest.MatcherAssert;
 import org.hamcrest.Matchers;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import com.restTests.POJOs.LoginDataPOJO;
@@ -21,7 +24,7 @@ import io.restassured.response.Response;
 
 public class TekarchApiLogin {
 	String extractedToken = null;
-
+	String BASE_URI = "https://us-central1-qa01-tekarch-accmanager.cloudfunctions.net/";
 
 	@Test
 	public void loginToApi() {
@@ -59,7 +62,7 @@ public class TekarchApiLogin {
 		res.then().statusCode(200).contentType(ContentType.JSON);
 		// .time(Matchers.lessThan(10000L));
 
-		res.prettyPrint();
+		//res.prettyPrint();
 
 				
 	}
@@ -69,12 +72,13 @@ public class TekarchApiLogin {
 	public void findTotalNoRecords() {
 
 		Header ob = new Header("token", extractedToken);
-		Response res = RestAssured.given().contentType(ContentType.JSON).header(ob).when().get("getdata");
+		Response res = RestAssured.given().contentType(ContentType.JSON).header(ob).queryParam("userid", "lzQHg4ywe0MI87vM7fpF").when()
+				.get(BASE_URI + "getdata");
 
 		res.then().statusCode(200).contentType(ContentType.JSON);
 
 		int totalRecords = res.body().jsonPath().get("size()");
-		System.out.println("Total number of records= " + res.body().jsonPath().get("size()"));
+		System.out.println("Total number of records= " + totalRecords);
 
 	}
 
@@ -84,22 +88,26 @@ public class TekarchApiLogin {
 	public void validateTotalRecordsLessThan10000() {
 
 		Header ob = new Header("token", extractedToken);
-		Response res = RestAssured.given().contentType(ContentType.JSON).header(ob).when().get("getdata");
+		Response res = RestAssured.given().contentType(ContentType.JSON).header(ob).queryParam("userid", "lzQHg4ywe0MI87vM7fpF").when()
+				.get(BASE_URI + "getdata");
 
 		res.then().statusCode(200).contentType(ContentType.JSON);
 
 		int totalRecords = res.body().jsonPath().get("size()");
 		System.out.println("Total number of records= " + res.body().jsonPath().get("size()"));
-		int lessThanSize = 10000;
-		//MatcherAssert.assertThat(totalRecords,lessThan(lessThanSize));
-		if (totalRecords < 10000) {
 
-			System.out.println("The total records are less than 10000");
+		int lessThanNumber = 10000;
+		
+		if (totalRecords < lessThanNumber) {
+			
+			System.out.println("The total records are less than " + lessThanNumber);
 		} else {
-			System.out.println("The total records are equal or greater than 10000");
+			System.out.println("The total records are equal or greater than " + lessThanNumber);
 		}
 
+		Assert.assertTrue(totalRecords < lessThanNumber, "The total records are less than " + lessThanNumber);
 	}
+
 
 	// find total number of records matching userid = lzQHg4ywe0MI87vM7fpF
 
@@ -107,8 +115,9 @@ public class TekarchApiLogin {
 	public void findTotalNoRecordsForUserid() {
 
 		Header ob = new Header("token", extractedToken);
-		Response res = RestAssured.given().contentType(ContentType.JSON).header(ob).when().get("getdata");
-
+		Response res = RestAssured.given().contentType(ContentType.JSON).header(ob).queryParam("userid", "lzQHg4ywe0MI87vM7fpF").when()
+				.get(BASE_URI + "getdata");
+		
 		res.then().statusCode(200).contentType(ContentType.JSON);
 
 		int totalRecordMatchingId = res.body().jsonPath().getInt("findAll{it.userid=='lzQHg4ywe0MI87vM7fpF'}.size()");
@@ -123,17 +132,17 @@ public class TekarchApiLogin {
 	public void getTotalNoSalaryUserid() {
 
 		Header ob = new Header("token", extractedToken);
-		Response res = RestAssured.given().contentType(ContentType.JSON).header(ob).when().get("getdata");
-
+		Response res = RestAssured.given().contentType(ContentType.JSON).header(ob).queryParam("userid", "lzQHg4ywe0MI87vM7fpF").when()
+				.get(BASE_URI + "getdata");
+		
 		res.then().statusCode(200).contentType(ContentType.JSON);
 		
-		List<Object> listID = res.body().jsonPath().getList("findAll(it.userid == 'lzQHg4ywe0MI87vM7fpF')");
+		List<String> salaries = res.body().jsonPath().getList("findAll{it.userid=='lzQHg4ywe0MI87vM7fpF'}.salary");
 		Integer totalSalary =0;
-		for(Object str: listID) {
-			
-			totalSalary += Integer.parseInt(str.toString());
+
+		for(String salary : salaries) {
+			totalSalary += Integer.parseInt(salary);
 		}
-		
 		System.out.println("The total salary for userId lzQHg4ywe0MI87vM7fpF = "+totalSalary);
 	}
 	
@@ -143,13 +152,14 @@ public class TekarchApiLogin {
 	public void getAccountNoforUserid() {
 		
 		Header ob = new Header("token", extractedToken);
-		Response res = RestAssured.given().contentType(ContentType.JSON).header(ob).when().get("getdata");
-
+		Response res = RestAssured.given().contentType(ContentType.JSON).header(ob).queryParam("userid", "lzQHg4ywe0MI87vM7fpF").when()
+				.get(BASE_URI + "getdata");
 		res.then().statusCode(200).contentType(ContentType.JSON);
 
 		
 		List<String> accountNo = res.body().jsonPath()
 				.getList("findAll{it.userid == 'lzQHg4ywe0MI87vM7fpF'}.accountno");
+		
 		System.out.println("Account numbers for the userid = lzQHg4ywe0MI87vM7fpF");
 		for (String accountNumber : accountNo) {
 			String accountNumberString = String.valueOf(accountNumber);
@@ -164,8 +174,8 @@ public class TekarchApiLogin {
 	public void findTotalNoRecordsDeptNo5() {
 
 		Header ob = new Header("token", extractedToken);
-		Response res = RestAssured.given().contentType(ContentType.JSON).header(ob).when().get("getdata");
-
+		Response res = RestAssured.given().contentType(ContentType.JSON).header(ob).queryParam("userid", "lzQHg4ywe0MI87vM7fpF").when()
+				.get(BASE_URI + "getdata");
 		res.then().statusCode(200).contentType(ContentType.JSON);
 		
 		int totalRecordsDept = res.body().jsonPath().getList("findAll{it.departmentno==5}").size();
@@ -180,15 +190,28 @@ public class TekarchApiLogin {
 	public void minimumAndMaximumSalaryAllRecords(){
 		
 		Header ob = new Header("token", extractedToken);
-		Response res = RestAssured.given().contentType(ContentType.JSON).header(ob).when().get("getdata");
+		Response res = RestAssured.given().contentType(ContentType.JSON).header(ob).queryParam("userid", "lzQHg4ywe0MI87vM7fpF").when()
+				.get(BASE_URI + "getdata");
 
 		res.then().statusCode(200).contentType(ContentType.JSON);
 		
-		int minSalary = res.body().jsonPath().getInt("salry.min()");
-		int maxSalary = res.body().jsonPath().getInt("salary.max()");
+		List<String> strSalaries = res.jsonPath().getList("salary", String.class);
+		
+		List<Integer> intSalaries = new ArrayList<Integer>();
+		for(String str : strSalaries) {
+			try {
+				intSalaries.add(Integer.parseInt(str.trim().replaceAll(",", "")));
+			}
+			catch(NumberFormatException e) {
+				System.out.println("Skipping Salary that couldn't be converted to number: " + str);
+			}
+		}
+		
+		int minSalary = Collections.min(intSalaries);
+		int maxSalary = Collections.max(intSalaries);
 		
 		System.out.println("Minimum salary is " +minSalary);
-		System.out.println("Minimum salary is " +minSalary);
+		System.out.println("Maximum salary is " +maxSalary);
 		
 		
 	}

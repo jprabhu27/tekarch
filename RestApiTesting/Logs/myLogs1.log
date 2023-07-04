@@ -21,3 +21,30 @@
 20230627 22:46:36 INFO  [main] tests.TekarchApiEndToEnd TekarchApiEndToEnd.java86 - *************User updated****************
 20230627 22:46:36 INFO  [main] tests.TekarchApiEndToEnd TekarchApiEndToEnd.java92 - *************Delete User Data****************
 20230627 22:46:51 INFO  [main] tests.TekarchApiEndToEnd TekarchApiEndToEnd.java100 - *************User Deleted****************
+20230703 21:43:10 INFO  [main] tests.TekarchApiEndToEnd TekarchApiEndToEnd.java41 - *************Login****************
+20230703 21:43:13 INFO  [main] tests.TekarchApiEndToEnd TekarchApiEndToEnd.java53 - *************Reading User info****************
+20230703 21:43:28 INFO  [main] tests.TekarchApiEndToEnd TekarchApiEndToEnd.java63 - *************User info is displayed****************
+20230703 21:43:30 INFO  [main] tests.TekarchApiEndToEnd TekarchApiEndToEnd.java70 - *************User is Created****************
+20230703 21:43:30 INFO  [main] tests.TekarchApiEndToEnd TekarchApiEndToEnd.java77 - *************Updating User data****************
+20230703 21:43:44 INFO  [main] tests.TekarchApiEndToEnd TekarchApiEndToEnd.java85 - *************User updated****************
+20230703 21:43:44 INFO  [main] tests.TekarchApiEndToEnd TekarchApiEndToEnd.java92 - *************Delete User Data****************
+20230703 21:43:58 INFO  [main] tests.TekarchApiEndToEnd TekarchApiEndToEnd.java100 - *************User Deleted****************
+20230703 22:06:20 INFO  [main] tests.TekarchApiEndToEnd TekarchApiEndToEnd.java41 - *************Login****************
+20230703 22:07:37 INFO  [main] tests.TekarchApiEndToEnd TekarchApiEndToEnd.java41 - *************Login****************
+20230703 22:09:05 INFO  [main] simpleTests.Login Login.java11 - *************Login****************
+20230703 22:27:36 INFO  [main] simpleTests.Login Login.java11 - *************Login****************
+20230703 22:27:38 INFO  [main] simpleTests.GetAllUsers GetAllUsers.java15 - *************Reading User info****************
+20230703 22:27:53 INFO  [main] simpleTests.CreateUser CreateUser.java17 - *************User info is displayed****************
+20230703 22:27:56 INFO  [main] simpleTests.CreateUser CreateUser.java24 - *************User is Created****************
+20230703 22:27:56 INFO  [main] tests.TekarchApiEndToEnd TekarchApiEndToEnd.java64 - *************Updating User data****************
+20230703 22:28:11 INFO  [main] tests.TekarchApiEndToEnd TekarchApiEndToEnd.java72 - *************User updated****************
+20230703 22:28:11 INFO  [main] tests.TekarchApiEndToEnd TekarchApiEndToEnd.java79 - *************Delete User Data****************
+20230703 22:28:25 INFO  [main] tests.TekarchApiEndToEnd TekarchApiEndToEnd.java87 - *************User Deleted****************
+20230703 22:34:09 INFO  [main] simpleTests.Login Login.java11 - *************Login****************
+20230703 22:34:12 INFO  [main] simpleTests.GetAllUsers GetAllUsers.java15 - *************Reading User info****************
+20230703 22:34:25 INFO  [main] simpleTests.CreateUser CreateUser.java17 - *************User info is displayed****************
+20230703 22:34:25 INFO  [main] simpleTests.CreateUser CreateUser.java24 - *************User is Created****************
+20230703 22:34:25 INFO  [main] tests.TekarchApiEndToEnd TekarchApiEndToEnd.java72 - *************Updating User data****************
+20230703 22:34:37 INFO  [main] tests.TekarchApiEndToEnd TekarchApiEndToEnd.java80 - *************User updated****************
+20230703 22:34:37 INFO  [main] tests.TekarchApiEndToEnd TekarchApiEndToEnd.java87 - *************Delete User Data****************
+20230703 22:34:50 INFO  [main] tests.TekarchApiEndToEnd TekarchApiEndToEnd.java95 - *************User Deleted****************

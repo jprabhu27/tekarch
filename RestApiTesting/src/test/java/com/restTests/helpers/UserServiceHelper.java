@@ -15,6 +15,7 @@ public class UserServiceHelper {
 
 	private static Response response;
 	private static String token = null;
+	
 
 	public static String getBaseUri() {
 
@@ -108,7 +109,8 @@ public class UserServiceHelper {
 		Header headers = new Header("token", token);
 		response = RestAssured.given()
 				.contentType("application/json")
-				.header(headers).body(updateUser)
+				.header(headers)
+				.body(updateUser)
 				.when()
 				.put(Endpoints.UPDATE_DATA);
 
