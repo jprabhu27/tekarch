@@ -19,8 +19,10 @@ import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import com.restTests.helpers.UserServiceHelper;
 import com.restTests.simpleTests.CreateUser;
+import com.restTests.simpleTests.DeleteUser;
 import com.restTests.simpleTests.GetAllUsers;
 import com.restTests.simpleTests.Login;
+import com.restTests.simpleTests.UpdateUser;
 
 public class TekarchApiEndToEnd extends UserServiceHelper {
 	
@@ -69,30 +71,20 @@ public class TekarchApiEndToEnd extends UserServiceHelper {
 	@Test(priority =4, enabled = true)
 	public static void TC_004_updateUserData()throws IOException{
 		
-		logger.info("*************Updating User data****************");
-	
-		Response response = updateUserData();
-		ReusableMethods.verifyStatusCodeis(response,200);
-		System.out.println("data has been updated----------");
-		String status = ReusableMethods.getJsonPathData(response, "status");
-		Assert.assertEquals(status, "success");
-		
-		logger.info("*************User updated****************");
+		System.out.println("\n===============================================");
+		System.out.println("TC_004_updateUserData");
+		UpdateUser.updateUser(logger);
+		System.out.println("===============================================\n");
 	}
 	
 	
 	@Test(priority =5, enabled = true)
 	public static void TC_005_deleteUserData()throws IOException{
 		
-		logger.info("*************Delete User Data****************");
-		
-		Response response = deleteUserData();
-		ReusableMethods.verifyStatusCodeis(response, 200);
-		System.out.println("Deleted Successfully ");
-		String status = ReusableMethods.getJsonPathData(response, "status");
-		Assert.assertEquals(status, "success");
-		
-		logger.info("*************User Deleted****************");
+		System.out.println("\n===============================================");
+		System.out.println("TC_005_deleteUserData");
+		DeleteUser.deleteUser(logger);
+		System.out.println("===============================================\n");
 		
 	}
 

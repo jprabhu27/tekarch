@@ -1,21 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="8" total="10" passed="2" failed="0" skipped="0">
+<testng-results ignored="0" total="5" passed="5" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-07-04T00:59:38 PDT" name="Default suite" finished-at="2023-07-04T00:59:55 PDT" duration-ms="17028">
+  <suite started-at="2023-07-04T17:29:59 PDT" name="RestAssuredSuite" finished-at="2023-07-04T17:30:44 PDT" duration-ms="45057">
     <groups>
     </groups>
-    <test started-at="2023-07-04T00:59:38 PDT" name="Default test" finished-at="2023-07-04T00:59:55 PDT" duration-ms="17028">
-      <class name="com.restTests.simpleTests.TekarchApiLogin">
-        <test-method signature="loginToApi1()[pri:0, instance:com.restTests.simpleTests.TekarchApiLogin@485966cc]" started-at="2023-07-04T00:59:38 PDT" name="loginToApi1" finished-at="2023-07-04T00:59:42 PDT" duration-ms="4492" status="PASS">
+    <test started-at="2023-07-04T17:29:59 PDT" name="Test" finished-at="2023-07-04T17:30:44 PDT" duration-ms="45057">
+      <class name="com.restTests.tests.TekarchApiEndToEnd">
+        <test-method is-config="true" signature="baseUri()[pri:0, instance:com.restTests.tests.TekarchApiEndToEnd@3cebbb30]" started-at="2023-07-04T17:29:59 PDT" name="baseUri" finished-at="2023-07-04T17:30:00 PDT" duration-ms="1121" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- loginToApi1 -->
-        <test-method signature="minimumAndMaximumSalaryAllRecords()[pri:0, instance:com.restTests.simpleTests.TekarchApiLogin@485966cc]" started-at="2023-07-04T00:59:42 PDT" name="minimumAndMaximumSalaryAllRecords" finished-at="2023-07-04T00:59:55 PDT" depends-on-methods="com.restTests.simpleTests.TekarchApiLogin.loginToApi1" duration-ms="12471" status="PASS">
+        </test-method> <!-- baseUri -->
+        <test-method signature="TC_001_validLogin()[pri:1, instance:com.restTests.tests.TekarchApiEndToEnd@3cebbb30]" started-at="2023-07-04T17:30:00 PDT" name="TC_001_validLogin" finished-at="2023-07-04T17:30:03 PDT" duration-ms="3095" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- minimumAndMaximumSalaryAllRecords -->
-      </class> <!-- com.restTests.simpleTests.TekarchApiLogin -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+        </test-method> <!-- TC_001_validLogin -->
+        <test-method is-config="true" signature="baseUri()[pri:0, instance:com.restTests.tests.TekarchApiEndToEnd@3cebbb30]" started-at="2023-07-04T17:30:03 PDT" name="baseUri" finished-at="2023-07-04T17:30:03 PDT" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- baseUri -->
+        <test-method signature="TC_002_getUserData()[pri:2, instance:com.restTests.tests.TekarchApiEndToEnd@3cebbb30]" started-at="2023-07-04T17:30:03 PDT" name="TC_002_getUserData" finished-at="2023-07-04T17:30:23 PDT" duration-ms="19181" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC_002_getUserData -->
+        <test-method is-config="true" signature="baseUri()[pri:0, instance:com.restTests.tests.TekarchApiEndToEnd@3cebbb30]" started-at="2023-07-04T17:30:23 PDT" name="baseUri" finished-at="2023-07-04T17:30:23 PDT" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- baseUri -->
+        <test-method signature="TC_003_addUserData()[pri:3, instance:com.restTests.tests.TekarchApiEndToEnd@3cebbb30]" started-at="2023-07-04T17:30:23 PDT" name="TC_003_addUserData" finished-at="2023-07-04T17:30:23 PDT" duration-ms="305" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC_003_addUserData -->
+        <test-method is-config="true" signature="baseUri()[pri:0, instance:com.restTests.tests.TekarchApiEndToEnd@3cebbb30]" started-at="2023-07-04T17:30:23 PDT" name="baseUri" finished-at="2023-07-04T17:30:23 PDT" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- baseUri -->
+        <test-method signature="TC_004_updateUserData()[pri:4, instance:com.restTests.tests.TekarchApiEndToEnd@3cebbb30]" started-at="2023-07-04T17:30:23 PDT" name="TC_004_updateUserData" finished-at="2023-07-04T17:30:39 PDT" duration-ms="15619" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC_004_updateUserData -->
+        <test-method signature="TC_005_deleteUserData()[pri:5, instance:com.restTests.tests.TekarchApiEndToEnd@3cebbb30]" started-at="2023-07-04T17:30:39 PDT" name="TC_005_deleteUserData" finished-at="2023-07-04T17:30:44 PDT" duration-ms="5665" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC_005_deleteUserData -->
+        <test-method is-config="true" signature="baseUri()[pri:0, instance:com.restTests.tests.TekarchApiEndToEnd@3cebbb30]" started-at="2023-07-04T17:30:39 PDT" name="baseUri" finished-at="2023-07-04T17:30:39 PDT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- baseUri -->
+      </class> <!-- com.restTests.tests.TekarchApiEndToEnd -->
+    </test> <!-- Test -->
+  </suite> <!-- RestAssuredSuite -->
 </testng-results>

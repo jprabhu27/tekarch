@@ -48,3 +48,31 @@
 20230703 22:34:37 INFO  [main] tests.TekarchApiEndToEnd TekarchApiEndToEnd.java80 - *************User updated****************
 20230703 22:34:37 INFO  [main] tests.TekarchApiEndToEnd TekarchApiEndToEnd.java87 - *************Delete User Data****************
 20230703 22:34:50 INFO  [main] tests.TekarchApiEndToEnd TekarchApiEndToEnd.java95 - *************User Deleted****************
+20230704 01:17:12 INFO  [main] simpleTests.UpdateUser UpdateUser.java17 - *************Updating User data****************
+20230704 01:17:21 INFO  [main] simpleTests.UpdateUser UpdateUser.java25 - *************User updated****************
+20230704 16:37:38 INFO  [main] simpleTests.UpdateUser UpdateUser.java17 - *************Updating User data****************
+20230704 16:37:51 INFO  [main] simpleTests.UpdateUser UpdateUser.java25 - *************User updated****************
+20230704 16:48:46 INFO  [main] simpleTests.Login Login.java11 - *************Login****************
+20230704 16:48:48 INFO  [main] simpleTests.GetAllUsers GetAllUsers.java15 - *************Reading User info****************
+20230704 16:49:04 INFO  [main] simpleTests.CreateUser CreateUser.java17 - *************User info is displayed****************
+20230704 16:49:06 INFO  [main] simpleTests.CreateUser CreateUser.java24 - *************User is Created****************
+20230704 16:49:06 INFO  [main] simpleTests.UpdateUser UpdateUser.java17 - *************Updating User data****************
+20230704 16:49:18 INFO  [main] simpleTests.UpdateUser UpdateUser.java25 - *************User updated****************
+20230704 16:49:18 INFO  [main] simpleTests.DeleteUser DeleteUser.java19 - *************Delete User Data****************
+20230704 16:49:33 INFO  [main] simpleTests.DeleteUser DeleteUser.java27 - *************User Deleted****************
+20230704 16:56:37 INFO  [main] simpleTests.Login Login.java11 - *************Login****************
+20230704 16:56:40 INFO  [main] simpleTests.GetAllUsers GetAllUsers.java15 - *************Reading User info****************
+20230704 16:56:45 INFO  [main] simpleTests.CreateUser CreateUser.java17 - *************User info is displayed****************
+20230704 16:56:45 INFO  [main] simpleTests.CreateUser CreateUser.java24 - *************User is Created****************
+20230704 16:56:45 INFO  [main] simpleTests.UpdateUser UpdateUser.java17 - *************Updating User data****************
+20230704 16:56:59 INFO  [main] simpleTests.UpdateUser UpdateUser.java25 - *************User updated****************
+20230704 16:56:59 INFO  [main] simpleTests.DeleteUser DeleteUser.java19 - *************Delete User Data****************
+20230704 16:57:10 INFO  [main] simpleTests.DeleteUser DeleteUser.java27 - *************User Deleted****************
+20230704 17:30:00 INFO  [main] simpleTests.Login Login.java11 - *************Login****************
+20230704 17:30:03 INFO  [main] simpleTests.GetAllUsers GetAllUsers.java15 - *************Reading User info****************
+20230704 17:30:23 INFO  [main] simpleTests.CreateUser CreateUser.java17 - *************User info is displayed****************
+20230704 17:30:23 INFO  [main] simpleTests.CreateUser CreateUser.java24 - *************User is Created****************
+20230704 17:30:23 INFO  [main] simpleTests.UpdateUser UpdateUser.java17 - *************Updating User data****************
+20230704 17:30:39 INFO  [main] simpleTests.UpdateUser UpdateUser.java25 - *************User updated****************
+20230704 17:30:39 INFO  [main] simpleTests.DeleteUser DeleteUser.java19 - *************Delete User Data****************
+20230704 17:30:44 INFO  [main] simpleTests.DeleteUser DeleteUser.java27 - *************User Deleted****************
