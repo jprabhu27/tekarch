@@ -22,7 +22,8 @@ public class AmazonDemo {
 
 		desiredCapability.setCapability("app", app.getAbsolutePath());
 		desiredCapability.setCapability("appPackage", "com.amazon.mShop.android.shopping");
-		desiredCapability.setCapability("appActivity", "com.amazon.mShop.navigation.MainActivity");
+		//desiredCapability.setCapability("appActivity", "com.amazon.mShop.navigation.MainActivity");
+		desiredCapability.setCapability("appActivity", "com.amazon.mShop.home.HomeActivity");
 		desiredCapability.setCapability("noReset", true);
 		
 		driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"),desiredCapability);
