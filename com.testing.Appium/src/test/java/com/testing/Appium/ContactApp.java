@@ -6,7 +6,9 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
@@ -18,9 +20,13 @@ import io.appium.java_client.touch.offset.PointOption;
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidTouchAction;
 
+
+
+
 public class ContactApp {
 
 	static AndroidDriver<MobileElement> driver;
+
 
 	public static void main(String[] args) throws Exception {
 		DesiredCapabilities desiredCapability = new DesiredCapabilities();
@@ -41,6 +47,7 @@ public class ContactApp {
 		//contact_name.click();
 		
 		TouchAction action = new AndroidTouchAction(driver);
+		
 		//action.tap(TapOptions.tapOptions().withElement(ElementOption.element(contact_name))).perform();
 		/*
 		 * action.longPress(LongPressOptions.longPressOptions().withElement(
@@ -49,7 +56,7 @@ public class ContactApp {
 		 */
 		
 		MobileElement menu = driver.findElement(By.id("com.samsung.android.app.contacts:id/drawer_icon"));
-		action.tap(TapOptions.tapOptions().withElement(ElementOption.element(menu))).perform();
+		//action.tap(TapOptions.tapOptions().withElement(ElementOption.element(menu))).perform();
 		
 		Thread.sleep(4000);
 		
@@ -73,15 +80,27 @@ public class ContactApp {
 		
 		int x = (int)(dimension.width*0.5);
 		
-		action.press(PointOption.point(x,scrollStart))
-		.waitAction(WaitOptions.waitOptions(Duration.ofMillis(500)))
-		.moveTo(PointOption.point(x,scrollEnd)).release().perform();
+		/*
+		 * action.press(PointOption.point(x,scrollStart))
+		 * .waitAction(WaitOptions.waitOptions(Duration.ofMillis(500)))
+		 * .moveTo(PointOption.point(x,scrollEnd)).release().perform();
+		 */
+		
+		driver.findElementByAndroidUIAutomator("new UiScrollable(new UiSelector()"
+		+".scrollable(true).instance(0))"
+		+".scrollIntoView(new UiSelector().text(\"Yogesh Prabhu\").instance(0))").click();
 		
 		
+		driver.findElementByAndroidUIAutomator("new UiSelector()"
+				+".resourceId(\"com.samsung.android.app.contacts:id/communication_card_alternate_icon\")").click();
 		
 		
+		driver.findElementByAndroidUIAutomator("new UISelector()"
+				+".resourceId(\"com.samsung.android.messaging:id/message_edit_text\")")
+				.sendKeys("Hello There");
 		
-		
+		Thread.sleep(3000);
+		driver.hideKeyboard();
 		
 	}
 

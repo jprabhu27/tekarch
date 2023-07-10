@@ -1,5 +1,6 @@
 package com.testing.Appium;
 
+import java.io.File;
 import java.net.URL;
 import java.time.Duration;
 import java.util.concurrent.TimeUnit;
@@ -22,6 +23,7 @@ public class DragDropApp {
 
 	public static void main(String[] args) throws Exception {
 		
+		File app = new File("C:\\Users\\Ketogal\\Downloads.drag_drop.apk");
 		
 		DesiredCapabilities desiredCapability = new DesiredCapabilities();
 		desiredCapability.setCapability("deviceName", "R58N121H16P");

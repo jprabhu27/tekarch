@@ -37,8 +37,8 @@ public class MultiTouchApp {
 		
 		driver.manage().timeouts().implicitlyWait(30,TimeUnit.SECONDS);
 		
-		MobileElement button_first = driver.findElement(By.id("com.easylabs.multitouch:id/buttonStart"));
-		button_first.click();
+		MobileElement startbutton = driver.findElement(By.id("com.easylabs.multitouch:id/buttonStart"));
+		startbutton.click();
 		
 		Dimension size = driver.manage().window().getSize();
 		int x1=(int)(size.width*0.20);
