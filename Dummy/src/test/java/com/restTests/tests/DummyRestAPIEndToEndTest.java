@@ -33,7 +33,7 @@ import io.restassured.response.Response;
 import com.restTests.helpers.UserServiceHelper;
 import com.restTests.simpleTests.CreateEmployees;
 import com.restTests.simpleTests.DeleteEmployees;
-
+import com.restTests.simpleTests.GetEmployeeId;
 import com.restTests.simpleTests.GetEmployees;
 
 
@@ -53,6 +53,14 @@ public class DummyRestAPIEndToEndTest extends UserServiceHelper {
 			
 		}
 		
+		@Test(priority =1, enabled = true)
+		public static void TC_002_addEmployeeData()throws IOException {
+			System.out.println("\n===============================================");
+			System.out.println("TC_003_addEmployeeData()");
+			CreateEmployees.addEmployee(logger);
+			System.out.println("===============================================\n");
+		}
+		
 		@Test(priority =2, enabled = true)
 		public static void TC_001_getEmployeeData() {
 			System.out.println("\n===============================================");
@@ -61,46 +69,35 @@ public class DummyRestAPIEndToEndTest extends UserServiceHelper {
 			System.out.println("===============================================\n");
 		}
 		
+		@Test(priority =3, enabled = true)
+		public static void TC_003_deleteEmployeeData()throws IOException{
+			Integer employeeId = 8453; // Replace 0 with output from Test 2
+			System.out.println("\n===============================================");
+			System.out.println("TC_003_deleteEmployeeData");
+			DeleteEmployees.deleteEmployee(employeeId, logger);
+			System.out.println("===============================================\n");
+			
+		}
+		
+		@Test(priority =4, enabled = true)
+		public static void TC_004_deleteEmployeeId() throws IOException{
+			
+			System.out.println("\n===============================================");
+			System.out.println("TC_004_deleteEmployeeId");
+			DeleteEmployees.deleteId(logger);
+			System.out.println("===============================================\n");
+			
+		}
+		
+		@Test(priority =5, enabled = true)
+		public static void TC_005_getDetailsEmployeeId() throws IOException{
+			
+			System.out.println("\n===============================================");
+			System.out.println("TC_005_getDetailsEmployeeId");
+			GetEmployeeId.getEmpId(logger);
+			System.out.println("===============================================\n");
+			
+		}
 }	
 		
 		
-//		RequestSpecification req = new RequestSpecBuilder().setBaseUri("https://dummy.restapiexample.com/api/v1")
-//				.setContentType(ContentType.JSON).build();
-//		
-//		//Test Case 2 Create 
-//		RestAssured.baseURI = "https://dummy.restapiexample.com/api/v1";
-//		
-//		RequestSpecification addDataBaseReq = new RequestSpecBuilder().setBaseUri("https://dummy.restapiexample.com/api/v1")
-//								.build();
-//				
-//		RequestSpecification reqAddData = given().log().all().spec(addDataBaseReq)
-//				
-//		
-//		//Test Case 1 Get the response in POJO
-//		//fetch the number of data records and print it to the console
-//		
-//				public void testCase1() {
-//			
-//			RestAssured.baseURI = "https://dummy.restapiexample.com/api/v1";
-//			
-//			UserDataPojo getrecordsReq = given().log().all()
-//					.when().get("/employees?").as(UserDataPojo.class);
-//					
-//			JsonPath js = new JsonPath();
-//			
-//		}
-//		
-//		
-//		
-////		List <com.restTests.pojos.DataPojo> data = getData(); 
-////		int dataRecords = js.getInt(getrecordsResponse);
-////			for(int i=0; i<)
-////				
-////				.then().assertThat().log().all().statusCode(200)
-////				.extract().response().as(UserDataPojo.class);
-//					
-//		
-//
-//	}
-//
-//

@@ -75,6 +75,7 @@ public class UserServiceHelper {
 		}
 		Header header = new Header("token", token);
 		AddUserPOJO user = ReusableMethods.getTestUser();
+		
 		System.out.println("Adding user: " + user.getAccountno());
 		response = RestAssured.given()
 				.contentType("application/json")
@@ -124,6 +125,7 @@ public class UserServiceHelper {
 
 		UserPOJO deleteUser = new UserPOJO();
 		List<UserPOJO> listOfUsers = getUserData();
+		
 		for (UserPOJO userToBeDeleted : listOfUsers) {
 			if (userToBeDeleted.getAccountno().equals(ReusableMethods.getTestUser().getAccountno())) {
 				deleteUser = userToBeDeleted;

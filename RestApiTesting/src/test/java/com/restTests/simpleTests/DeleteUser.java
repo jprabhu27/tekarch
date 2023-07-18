@@ -14,7 +14,7 @@ import org.testng.Assert;
 
 public class DeleteUser {
 	
-public static void deleteUser(Logger logger)throws IOException{
+	public static void deleteUser(Logger logger)throws IOException{
 		
 		logger.info("*************Delete User Data****************");
 		

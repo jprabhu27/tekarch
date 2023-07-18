@@ -5,8 +5,8 @@
     <classes>
       <class name="com.restTests.tests.DummyRestAPIEndToEndTest">
         <methods>
-          <include name="TC_001_getEmployeeData"/>
           <include name="baseUri"/>
+          <include name="TC_004_deleteEmployeeId"/>
         </methods>
       </class> <!-- com.restTests.tests.DummyRestAPIEndToEndTest -->
     </classes>

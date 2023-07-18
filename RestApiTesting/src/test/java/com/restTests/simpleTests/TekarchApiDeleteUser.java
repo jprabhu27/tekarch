@@ -89,6 +89,7 @@ public class TekarchApiDeleteUser {
 				.log().all();
 				
 				res.prettyPrint();
+				
 	
 	}
 }

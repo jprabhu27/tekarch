@@ -10,10 +10,13 @@ public class GetEmployees {
 	
 	public static void getEmployees(Logger logger) {
 		
-	logger.info("*************Reading User info****************");
+	logger.info("*************Reading getEmployees****************");
+	
 	//Return list of users
 	List<EmployeeDataPojo> listOfEmployees = UserServiceHelper.getEmployees();
 	Assert.assertNotEquals(listOfEmployees.size(), 0);
+	
+	logger.info("*************End of getEmployees****************");
 }
 
 }
